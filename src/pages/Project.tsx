@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { getProjectById, projects, services, contactEmail } from "@/data/projects";
+import Navbar from "@/components/Navbar";
+import FloatingNav from "@/components/FloatingNav";
 import { Check, ArrowDown, ArrowLeft, ArrowRight, Quote } from "lucide-react";
 
 const Reveal = ({
