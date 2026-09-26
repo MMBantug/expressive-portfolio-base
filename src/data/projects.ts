@@ -396,7 +396,7 @@ export const projects: Project[] = [
     id: "esp05-tanzania",
     title: "Empowerment through Skills Program (ESP05)",
     tags: ["women's empowerment", "workforce development", "program management"],
-    type: "Program Management",
+    type: "TECHNICAL COOPERATION & WORKFORCE DEVELOPMENT",
     location: "Morogoro & Dodoma Regions, Tanzania",
     year: "2022–2026",
     timeframe: "4 years",
