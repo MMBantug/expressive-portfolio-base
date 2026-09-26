@@ -409,7 +409,7 @@ export const projects: Project[] = [
     images: [
       "/TZ_Header.JPG",
       "/TZ_Opportunities.jpeg",
-      u("photo-1522202176988-66273c2fd55f"),
+      "/TZ_Approach.jpeg",
       u("photo-1529156069898-49953e39b3ac"),
     ],
     color: "#10B981",
