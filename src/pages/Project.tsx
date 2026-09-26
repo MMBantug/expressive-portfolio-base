@@ -512,7 +512,4 @@ const Project = () => {
   );
 };
 
-import Navbar from "@/components/Navbar";
-import FloatingNav from "@/components/FloatingNav";
-
 export default Project;
