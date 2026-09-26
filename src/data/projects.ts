@@ -407,7 +407,7 @@ export const projects: Project[] = [
     overview:
       "ESP05 set out to open doors for women in the Morogoro and Dodoma regions through skills training and stronger connections between training institutions and local industry. I led the program end to end — carrying it from the original proposal through implementation, donor reporting, and close-out — and facilitated the sessions that brought Folk Development Colleges, community organizations, and employers to the same table.",
     images: [
-      u "/TZ_Header.JPG",
+      "/TZ_Header.JPG",
       u("photo-1544531585-9847b68c8c86"),
       u("photo-1522202176988-66273c2fd55f"),
       u("photo-1529156069898-49953e39b3ac"),
