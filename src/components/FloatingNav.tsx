@@ -70,11 +70,11 @@ const FloatingNav = () => {
                   Say Hi!
                 </p>
                 <a 
-                  href="mailto:hello@jordanstudio.com"
+                  href="mailto:hello@marybantug.com"
                   className="flex items-center gap-2 text-sm hover:opacity-70 transition-opacity"
                 >
                   <Mail size={14} />
-                  hello@jordanstudio.com
+                  hello@marybantug.com
                 </a>
               </div>
 

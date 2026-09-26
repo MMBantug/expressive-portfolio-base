@@ -1,273 +1,800 @@
-import floralImg from "@/assets/kasturi-roy-floral.jpg";
-import varoomImg from "@/assets/nik-varoom.jpg";
-import synthwaveImg from "@/assets/nik-synthwave.jpg";
-import deerImg from "@/assets/omk-deer.jpg";
-import holographicImg from "@/assets/simon-lee-holographic.jpg";
-import catImg from "@/assets/syarafina-cat.jpg";
-import birdImg from "@/assets/nypl-bird.jpg";
-import jewelryImg from "@/assets/nypl-jewelry.jpg";
-import spheresImg from "@/assets/victoria-spheres.jpg";
-
 export interface Project {
   id: string;
   title: string;
   tags: string[];
-  description: string;
+  type: string;
+  location: string;
   year: string;
+  timeframe: string;
   client?: string;
+  focusArea: string;
+  summary: string;
+  overview: string;
   images: string[];
   color: string;
-  aspectRatio: 'portrait' | 'landscape' | 'square';
+  aspectRatio: "portrait" | "landscape" | "square";
+  expertise: string[];
+  opportunity: string;
+  approach: string;
+  work: string[];
+  results: { value: string; label: string }[];
+  voices: { quote: string; name: string; role: string }[];
+  fieldNote: { quote: string; reflection: string };
+  lessons: string[];
+  whyItMatters: string[];
+  relatedIds: string[];
 }
+
+const u = (id: string, w = 1400) =>
+  `https://images.unsplash.com/${id}?w=${w}&q=80`;
 
 export const projects: Project[] = [
   {
-    id: "chromatic-dreams",
-    title: "Chromatic Dreams",
-    tags: ["illustration", "digital art", "abstract"],
-    description: "A series of digital illustrations exploring the interaction between geometric shapes and vibrant colors. The project emerged from a desire to translate emotions into abstract visual compositions, where each piece represents a different emotional state through specific chromatic palettes.",
-    year: "2024",
-    client: "Personal Project",
+    id: "building-bridges-bogota",
+    title: "Building Bridges in Bogotá",
+    tags: ["partnership development", "stakeholder engagement", "international collaboration"],
+    type: "Partnership & Strategy",
+    location: "Bogotá, Colombia",
+    year: "2025",
+    timeframe: "18 months",
+    client: "Secretary of Education & Local Industry Alliance",
+    focusArea: "Partnership Development",
+    summary:
+      "Convening employers, training centers, and city government around a shared youth-employment agenda — and building the coalition structures to sustain it beyond any single program cycle.",
+    overview:
+      "The city had no shortage of goodwill: employers wanted entry-level talent, training centers had waiting lists, and the local government had funding. What was missing was a shared table. I was brought in to design and facilitate that table — turning scattered goodwill into a signed partnership compact with clear roles, timelines, and accountability.",
     images: [
-      spheresImg,
-      "https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&q=80",
-      "https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800&q=80"
-    ],
-    color: "#FF6B6B",
-    aspectRatio: "portrait"
-  },
-  {
-    id: "vogue-editorial",
-    title: "Vogue Editorial",
-    tags: ["editorial", "magazine", "fashion"],
-    description: "Art direction and editorial design for a special edition of Vogue Brasil. The project involved creating bold typographic layouts that dialogue with fashion photography, resulting in pages that are true works of graphic art.",
-    year: "2024",
-    client: "Vogue Brasil",
-    images: [
-      varoomImg,
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80"
-    ],
-    color: "#4ECDC4",
-    aspectRatio: "landscape"
-  },
-  {
-    id: "neon-nights",
-    title: "Neon Nights",
-    tags: ["poster", "typography", "nightlife"],
-    description: "A collection of typographic posters created for a series of electronic music events in São Paulo. The aesthetic combines experimental typography with neon gradients, capturing the vibrant energy of nightlife.",
-    year: "2023",
-    client: "D-Edge Club",
-    images: [
-      synthwaveImg,
-      "https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=800&q=80"
-    ],
-    color: "#A855F7",
-    aspectRatio: "portrait"
-  },
-  {
-    id: "botanical-essence",
-    title: "Botanical Essence",
-    tags: ["branding", "identity", "cosmetics"],
-    description: "Complete visual identity for a natural cosmetics brand. The project includes logo, color system, typography, packaging, and communication materials, all inspired by the delicacy and sophistication of the botanical universe.",
-    year: "2024",
-    client: "Botanical Essence",
-    images: [
-      floralImg,
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
-    ],
-    color: "#10B981",
-    aspectRatio: "square"
-  },
-  {
-    id: "urban-fragments",
-    title: "Urban Fragments",
-    tags: ["illustration", "urban", "collage"],
-    description: "An illustration project exploring the fragmentation of the contemporary urban landscape. Through digital collages, the pieces capture the chaotic overlay of architectural elements, signs, and textures that define major metropolises.",
-    year: "2023",
-    client: "Galeria Vermelho",
-    images: [
-      deerImg,
-      "https://images.unsplash.com/photo-1549490349-8643362247b5?w=800&q=80"
-    ],
-    color: "#F59E0B",
-    aspectRatio: "landscape"
-  },
-  {
-    id: "typeface-manifesto",
-    title: "Typeface Manifesto",
-    tags: ["typography", "poster", "experimental"],
-    description: "A series of experimental posters exploring the limits of typography as a form of visual expression. Each piece challenges traditional typographic conventions, transforming letters into graphic sculptures.",
-    year: "2024",
-    client: "ADG Brasil",
-    images: [
-      holographicImg,
-      "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&q=80"
-    ],
-    color: "#EC4899",
-    aspectRatio: "portrait"
-  },
-  {
-    id: "flow-magazine",
-    title: "Flow Magazine",
-    tags: ["editorial", "magazine", "lifestyle"],
-    description: "Editorial design for Flow magazine, a publication about mindfulness and well-being. The project involved creating a visual system that conveys calm and balance through generous spacing, elegant typography, and contemplative photography.",
-    year: "2023",
-    client: "Flow Magazine",
-    images: [
-      catImg,
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
-    ],
-    color: "#6366F1",
-    aspectRatio: "landscape"
-  },
-  {
-    id: "aurora-identity",
-    title: "Aurora Identity",
-    tags: ["branding", "identity", "tech"],
-    description: "Visual identity for Aurora, a technology startup focused on artificial intelligence. The visual system combines fluid shapes inspired by aurora borealis with contemporary typography and a vibrant color palette.",
-    year: "2024",
-    client: "Aurora AI",
-    images: [
-      birdImg,
-      "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&q=80"
-    ],
-    color: "#14B8A6",
-    aspectRatio: "square"
-  },
-  {
-    id: "street-poetry",
-    title: "Street Poetry",
-    tags: ["linework", "illustration", "urban"],
-    description: "A visual exploration of urban poetry through intricate linework illustrations. Each piece captures the rhythm and energy of street life, translating movement and emotion into delicate black and white compositions.",
-    year: "2024",
-    client: "Urban Arts Festival",
-    images: [
-      jewelryImg,
-      "https://images.unsplash.com/photo-1502759683299-cdcd6974244f?w=800&q=80"
-    ],
-    color: "#1F2937",
-    aspectRatio: "portrait"
-  },
-  {
-    id: "color-theory",
-    title: "Color Theory",
-    tags: ["abstract", "digital", "experimental"],
-    description: "An experimental study of color relationships and their psychological impact. This personal project explores how different color combinations can evoke specific emotions and create visual tension or harmony.",
-    year: "2024",
-    client: "Personal Project",
-    images: [
-      "https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?w=800&q=80",
-      "https://images.unsplash.com/photo-1525909002-1b05e0c869d8?w=800&q=80"
-    ],
-    color: "#8B5CF6",
-    aspectRatio: "landscape"
-  },
-  {
-    id: "digital-natives",
-    title: "Digital Natives",
-    tags: ["illustration", "character", "digital"],
-    description: "Character design series exploring the identity of the digital generation. These illustrations blend human forms with digital elements, questioning the boundaries between our physical and virtual selves.",
-    year: "2023",
-    client: "Tech Conference",
-    images: [
-      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80",
-      "https://images.unsplash.com/photo-1620121692029-d088224ddc74?w=800&q=80"
-    ],
-    color: "#06B6D4",
-    aspectRatio: "square"
-  },
-  {
-    id: "festival-posters",
-    title: "Festival Posters",
-    tags: ["poster", "music", "print"],
-    description: "A vibrant collection of posters designed for music festivals across Brazil. Each poster captures the unique energy of the event through bold typography, dynamic compositions, and striking color palettes.",
-    year: "2023",
-    client: "Various Festivals",
-    images: [
-      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80",
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80"
-    ],
-    color: "#F43F5E",
-    aspectRatio: "portrait"
-  },
-  {
-    id: "brand-fusion",
-    title: "Brand Fusion",
-    tags: ["branding", "strategy", "identity"],
-    description: "A comprehensive rebranding project for a merged company, combining two distinct brand identities into a cohesive new visual language. The challenge was to honor both legacies while creating something fresh and forward-looking.",
-    year: "2024",
-    client: "Fusion Corp",
-    images: [
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80",
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80"
+      u("photo-1523580494863-6f3031224c94"),
+      u("photo-1517048676732-d65bc937f952"),
+      u("photo-1531482615713-2afd69097998"),
+      u("photo-1529156069898-49953e39b3ac"),
     ],
     color: "#0EA5E9",
-    aspectRatio: "landscape"
-  },
-  {
-    id: "ink-stories",
-    title: "Ink Stories",
-    tags: ["linework", "illustration", "narrative"],
-    description: "A series of narrative illustrations using traditional ink techniques digitized for modern applications. Each piece tells a story through intricate line details and carefully balanced compositions.",
-    year: "2023",
-    client: "Publishing House",
-    images: [
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80",
-      "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80"
+    aspectRatio: "landscape",
+    expertise: [
+      "Partnership Development",
+      "Stakeholder Engagement",
+      "Workshop Facilitation",
+      "Coalition Building",
+      "Program Design",
+      "International Collaboration",
     ],
-    color: "#374151",
-    aspectRatio: "portrait"
+    opportunity:
+      "Three sectors, one labor market, and no mechanism to coordinate. Employers interviewed for roles training centers didn't teach; graduates finished programs without a single employer contact. Youth unemployment in the target districts sat well above the city average, and every institution blamed the others. The cost of inaction was measured in a generation of young people aging out of eligibility for the very programs meant to serve them.",
+    approach:
+      "Rather than starting with a memorandum, I started with listening. Over six weeks I ran one-on-one interviews with every prospective partner, mapping what each actor needed, feared, and could credibly offer. Those interviews became the raw material for a series of facilitated working sessions where partners drafted the compact themselves — because a partnership people write is a partnership people keep.",
+    work: [
+      "Stakeholder mapping and 30+ one-on-one interviews across employers, training providers, and government",
+      "Design and facilitation of three multi-sector working sessions to draft the partnership compact",
+      "Negotiation of shared governance structures, including a rotating steering committee",
+      "Development of a results framework with indicators all three sectors agreed to track",
+      "Coaching two local facilitators to carry the process forward after the engagement ended",
+    ],
+    results: [
+      { value: "14", label: "organizations signed the partnership compact" },
+      { value: "420", label: "young people enrolled in new pathways in year one" },
+      { value: "3", label: "career pathways co-designed and launched" },
+ { value: "82%", label: "of partner commitments delivered on schedule" },
+    ],
+    voices: [
+      {
+        quote:
+          "For the first time, we were in a room where the training center, the employer, and the city were all solving one problem instead of three.",
+        name: "Program Director",
+        role: "Local Industry Alliance",
+      },
+      {
+        quote:
+          "Mary made the hard conversations feel safe — and made the safe conversations feel urgent.",
+        name: "Deputy Secretary",
+        role: "City Education Office",
+      },
+    ],
+    fieldNote: {
+      quote:
+        "The most important meeting happened in the parking lot, after the meeting.",
+      reflection:
+        "On the second day of negotiations, two delegates who had barely spoken in the plenary kept talking by their cars for forty minutes. That hallway-and-parking-lot energy — not the signed document — was the real deliverable. My job was less to build a partnership than to create the conditions where people could finally hear each other.",
+    },
+    lessons: [
+      "Coalitions are built on self-interest, honestly named — not on shared slogans.",
+      "Facilitation is strategy: who speaks first shapes what is possible.",
+      "Design the exit before the entrance; sustainability is a design choice, not an afterthought.",
+    ],
+    whyItMatters: [
+      "Cross-sector partnerships fail more often from process neglect than from lack of funding or intent.",
+      "Locally owned governance structures outlast externally designed programs.",
+      "Youth employment is a systems problem — and systems problems are convening problems.",
+    ],
+    relatedIds: ["convening-the-unconvened", "listening-tour", "first-hundred-days"],
   },
   {
-    id: "paper-dreams",
-    title: "Paper Dreams",
-    tags: ["collage", "mixed media", "experimental"],
-    description: "Mixed media collage work combining vintage paper textures with contemporary digital techniques. This project explores themes of memory and nostalgia through layered visual storytelling.",
+    id: "skills-next-economy",
+    title: "Skills for the Next Economy",
+    tags: ["workforce development", "program design", "education & skills"],
+    type: "Program Design",
+    location: "Manila, Philippines",
     year: "2024",
-    client: "Art Gallery",
+    timeframe: "12 months",
+    client: "National Technical-Vocational Agency",
+    focusArea: "Workforce Development",
+    summary:
+      "Redesigning a national training curriculum so that what classrooms teach matches what the digital economy actually hires for.",
+    overview:
+      "A national training agency faced a widening gap: its most popular courses prepared learners for jobs that were quietly disappearing. I led a twelve-month curriculum redesign, pairing labor-market analytics with employer co-design to rebuild three flagship programs from the ground up.",
     images: [
-      "https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=800&q=80",
-      "https://images.unsplash.com/photo-1456086272160-b28b0645b729?w=800&q=80"
+      u("photo-1524178232363-1fb2b075b655"),
+      u("photo-1573164713988-8665fc963095"),
+      u("photo-1497486751825-1233686d5d80"),
+      u("photo-1522202176988-66273c2fd55f"),
+    ],
+    color: "#14B8A6",
+    aspectRatio: "landscape",
+    expertise: [
+      "Program Design",
+      "Workforce Development",
+      "Curriculum Strategy",
+      "Labor Market Analysis",
+      "Stakeholder Engagement",
+      "Project Management",
+    ],
+    opportunity:
+      "Enrollment was strong and completion rates were healthy — but placement was falling year over year. Graduates held certificates employers no longer recognized as preparation. The agency's own data stopped at the classroom door: nobody had systematically asked employers what they were hiring for, or why they were choosing other candidates.",
+    approach:
+      "I built the redesign around evidence, not opinion. We began with a demand-side study — interviews and hiring data from 60 employers across four regions — then translated the findings into skills profiles for each target occupation. Employers didn't just review the new curriculum; they helped build the assessments, which turned skeptics into champions.",
+    work: [
+      "Demand-side labor market study covering 60 employers across four regions",
+      "Co-design of skills profiles for three target occupation families",
+      "Rebuild of three flagship curricula with modular, stackable units",
+      "Development of employer-validated assessment tools",
+      "Training-of-trainers for 120 instructors across the national network",
+    ],
+    results: [
+      { value: "60", label: "employers engaged in curriculum co-design" },
+      { value: "120", label: "instructors trained on the new programs" },
+      { value: "+34%", label: "improvement in graduate placement rate" },
+    ],
+    voices: [
+      {
+        quote:
+          "We stopped guessing what employers want and started asking. That one shift changed everything downstream.",
+        name: "Curriculum Lead",
+        role: "National Training Agency",
+      },
+    ],
+    fieldNote: {
+      quote: "Every curriculum is a bet about the future. Most were placed years ago.",
+      reflection:
+        "Reviewing the old course materials, I found modules last updated before the pandemic — teaching tools for jobs that had already transformed. The moment that stayed with me was an instructor saying, quietly, that she had known for years the content was outdated but had no channel to say so. Systems don't lack information; they lack listening structures.",
+    },
+    lessons: [
+      "Placement data is the truest curriculum feedback loop — wire it in from day one.",
+      "Instructors are your earliest warning system; give them a formal channel.",
+      "Stackable credentials turn a single course into a career ladder.",
+    ],
+    whyItMatters: [
+      "Skills systems that don't track employer demand train people for the past.",
+      "Employer co-design builds both relevance and political durability.",
+      "Curriculum reform is change management, not just content development.",
+    ],
+    relatedIds: ["blueprint-to-bootcamp", "rural-pathways", "women-who-build"],
+  },
+  {
+    id: "classrooms-without-borders",
+    title: "Classrooms Without Borders",
+    tags: ["international collaboration", "education & skills", "partnership development"],
+    type: "Partnership & Exchange",
+    location: "Nairobi, Kenya",
+    year: "2024",
+    timeframe: "10 months",
+    client: "Regional Education Network",
+    focusArea: "International Collaboration",
+    summary:
+      "Designing a cross-border teacher exchange across five countries — turning a pilot of good intentions into a structured program with shared standards.",
+    overview:
+      "Five countries, one regional network, and a shared teacher shortage in STEM subjects. I designed and launched a cross-border exchange program that lets teachers serve where they are needed most — with shared standards, mutual recognition of qualifications, and safeguards for both the teachers and the schools that host them.",
+    images: [
+      u("photo-1543269865-cbf427effbad"),
+      u("photo-1427504494785-3a9ca7044f45"),
+      u("photo-1523050854058-8df90110c9f1"),
+      u("photo-1517245386807-bb43f82c33c4"),
+    ],
+    color: "#F59E0B",
+    aspectRatio: "portrait",
+    expertise: [
+      "International Collaboration",
+      "Program Design",
+      "Partnership Development",
+      "Policy Alignment",
+      "Stakeholder Engagement",
+      "Capacity Building",
+    ],
+    opportunity:
+      "Each country in the network was separately recruiting against the same regional shortage, often competing with each other for the same teachers. Qualifications earned in one country weren't recognized in another, and ad-hoc arrangements left teachers without contracts, insurance, or career continuity. The network needed one framework five ministries could sign.",
+    approach:
+      "The breakthrough was sequencing: instead of negotiating a grand treaty, I designed a minimum viable exchange between just two countries, documented everything, and used the pilot's results as the evidence base for the wider framework. Small wins created the trust that big agreements require.",
+    work: [
+      "Comparative review of teacher qualification and registration frameworks across five countries",
+      "Design of a two-country pilot exchange, including contracts, mentoring, and safeguards",
+      "Facilitation of inter-ministerial working groups toward a regional framework agreement",
+      "Development of a shared toolkit: matching, onboarding, and recognition procedures",
+      "Establishment of a regional coordination unit with staff drawn from member countries",
+    ],
+    results: [
+      { value: "5", label: "countries joined the regional framework" },
+      { value: "38", label: "teachers deployed in the first two cohorts" },
+      { value: "12,000+", label: "students reached by exchanged teachers" },
+    ],
+    voices: [
+      {
+        quote:
+          "We had talked about regional cooperation for a decade. This was the first time we had a design we could actually sign.",
+        name: "Network Coordinator",
+        role: "Regional Education Network",
+      },
+    ],
+    fieldNote: {
+      quote: "The pilot teacher taught 240 students math — and two ministries how to cooperate.",
+      reflection:
+        "Our first exchange teacher sent weekly voice notes describing her classroom. Ministers read them. It sounds small, but those notes did more for political will than any briefing paper: they made an abstract agreement feel like a person, a classroom, a community.",
+    },
+    lessons: [
+      "Pilot small, document everything, then scale on evidence.",
+      "Mutual recognition of qualifications is the hinge every mobility program turns on.",
+      "Individual stories move policy faster than aggregated data.",
+    ],
+    whyItMatters: [
+      "Teacher shortages are regional problems wearing national disguises.",
+      "Mobility frameworks protect workers as much as they move them.",
+      "Regional bodies succeed when they deliver small, visible wins early.",
+    ],
+    relatedIds: ["building-bridges-bogota", "teachers-at-the-table", "convening-the-unconvened"],
+  },
+  {
+    id: "listening-tour",
+    title: "The Listening Tour",
+    tags: ["stakeholder engagement", "capacity building", "workforce development"],
+    type: "Stakeholder Engagement",
+    location: "Ho Chi Minh City, Vietnam",
+    year: "2023",
+    timeframe: "6 months",
+    client: "International Development Partner",
+    focusArea: "Stakeholder Engagement",
+    summary:
+      "A six-month listening tour across factories, dormitories, and training centers — rebuilding a workforce program around what workers actually said.",
+    overview:
+      "A flagship workforce program was delivering on paper but underused in practice. I led a deep listening process across the full workforce chain — workers, line supervisors, trainers, and recruiters — and translated what we heard into a redesigned program with new services the original design had never imagined.",
+    images: [
+      u("photo-1517245386807-bb43f82c33c4"),
+      u("photo-1529156069898-49953e39b3ac"),
+      u("photo-1522202176988-66273c2fd55f"),
+      u("photo-1573164713988-8665fc963095"),
+    ],
+    color: "#A855F7",
+    aspectRatio: "square",
+    expertise: [
+      "Stakeholder Engagement",
+      "Qualitative Research",
+      "Workshop Facilitation",
+      "Capacity Building",
+      "Program Design",
+      "Cross-Cultural Communication",
+    ],
+    opportunity:
+      "Enrollment numbers looked fine; retention didn't. Half of participants left programs within the first month. The funder assumed the problem was marketing. The real question was whether the program was solving a problem workers actually had — and nobody had asked them in their own language, on their own turf, without an enrollment form in hand.",
+    approach:
+      "We went where people already were: factory canteens, dormitory common rooms, bus stops outside the industrial zone. Over 90 conversations, we listened for the gaps between what the program offered and what people were navigating — transport shifts, childcare, remittances, night classes that ended after the last bus.",
+    work: [
+      "90+ in-context interviews across factories, dormitories, and training centers",
+      "Journey mapping of the worker experience from first contact to first job",
+      "Synthesis workshops with program staff to reframe the service model",
+      "Redesign of scheduling, outreach, and support services based on findings",
+      "Establishment of a permanent worker advisory panel",
+    ],
+    results: [
+      { value: "90+", label: "in-depth conversations across the workforce chain" },
+      { value: "2.4x", label: "increase in month-two program retention" },
+      { value: "1", label: "permanent worker advisory panel established" },
+    ],
+    voices: [
+      {
+        quote:
+          "Nobody ever asked me why I left. They only asked why I hadn't come back.",
+        name: "Former program participant",
+        role: "Electronics manufacturing worker",
+      },
+    ],
+    fieldNote: {
+      quote: "The bus schedule was the real curriculum constraint.",
+      reflection:
+        "We had budgeted for everything except transport timing. One worker drew me the bus timetable on the back of a payslip, showing that the free evening class ended ninety minutes after the last bus to her district. Three years of 'low engagement' was, in part, a timetable problem. Proximity to real lives is not a research nicety — it is where the answers live.",
+    },
+    lessons: [
+      "Retention problems are usually design problems wearing a marketing costume.",
+      "Interview people in their context, not in your office.",
+      "The cheapest fixes are often found in logistics, not strategy.",
+    ],
+    whyItMatters: [
+      "Programs designed without workers solve the funder's problem, not the worker's.",
+      "Listening is a capability organizations can build, not a one-off exercise.",
+      "Small structural frictions quietly defeat well-funded intentions.",
+    ],
+    relatedIds: ["rural-pathways", "women-who-build", "skills-next-economy"],
+  },
+  {
+    id: "blueprint-to-bootcamp",
+    title: "Blueprint to Bootcamp",
+    tags: ["workforce development", "program design", "partnership development"],
+    type: "Program Design",
+    location: "Berlin, Germany",
+    year: "2023",
+    timeframe: "9 months",
+    client: "Regional Chamber of Commerce",
+    focusArea: "Program Design",
+    summary:
+      "Turning a regional skills blueprint into a working bootcamp model — from employer promise to first employed cohort in nine months.",
+    overview:
+      "A regional skills strategy had sat on a shelf for two years. I converted it into an operating bootcamp: a 14-week intensive co-owned by employers, with hiring commitments built in from day one and a design built for the region's specific labor market rather than imported wholesale.",
+    images: [
+      u("photo-1552664730-d307ca884978"),
+      u("photo-1531482615713-2afd69097998"),
+      u("photo-1524178232363-1fb2b075b655"),
+      u("photo-1517048676732-d65bc937f952"),
+    ],
+    color: "#6366F1",
+    aspectRatio: "landscape",
+    expertise: [
+      "Program Design",
+      "Workforce Development",
+      "Employer Engagement",
+      "Project Management",
+      "Partnership Development",
+      "Monitoring & Evaluation",
+    ],
+    opportunity:
+      "The blueprint was rigorous but abstract: forty pages of priorities with no delivery mechanism. Meanwhile, employers were importing talent for mid-skill technical roles while local residents lined up for unrelated work. The gap was operational — someone had to turn strategy into a program a person could enroll in on a Tuesday.",
+    approach:
+      "I treated the blueprint as raw material, not scripture. We reverse-engineered it into a single program with one occupation family, one employer coalition, and one funding model — deliberately narrow so it could prove itself. Speed to a visible result mattered more than comprehensive coverage.",
+    work: [
+      "Translation of the regional skills blueprint into one deliverable program design",
+      "Recruitment of a founding employer coalition with named hiring commitments",
+      "Design of the 14-week intensive: curriculum, schedule, support services, assessment",
+      "Setup of financing and governance, including employer cost-share model",
+      "Delivery support through the first cohort, from intake to job placement",
+    ],
+    results: [
+      { value: "14 wks", label: "from intake to job-ready, per cohort" },
+      { value: "9", label: "employers with named hiring commitments" },
+      { value: "71%", label: "of the first cohort employed within 3 months" },
+    ],
+    voices: [
+      {
+        quote:
+          "We stopped writing strategy documents and started counting hired people. That reframed every meeting.",
+        name: "Skills Program Manager",
+        role: "Regional Chamber of Commerce",
+      },
+    ],
+    fieldNote: {
+      quote: "The blueprint didn't fail. It was simply never given hands.",
+      reflection:
+        "In week one, an employer asked which page of the blueprint I was implementing. None, I admitted — we were implementing its conclusions. That distinction is the whole game: strategy documents describe a direction, but programs live or die on schedules, budgets, and named people doing named tasks.",
+    },
+    lessons: [
+      "A strategy without a delivery vehicle is a wish, not a plan.",
+      "Narrow beats comprehensive when you need proof of concept.",
+      "Named hiring commitments transform employer engagement from polite to real.",
+    ],
+    whyItMatters: [
+      "The distance between skills policy and skills delivery is where programs go to die.",
+      "Employer ownership is the difference between a course and a pipeline.",
+      "Speed to first result buys credibility for everything that follows.",
+    ],
+    relatedIds: ["skills-next-economy", "first-hundred-days", "building-bridges-bogota"],
+  },
+  {
+    id: "teachers-at-the-table",
+    title: "Teachers at the Table",
+    tags: ["stakeholder engagement", "education & skills", "capacity building"],
+    type: "Stakeholder Engagement",
+    location: "Jakarta, Indonesia",
+    year: "2023",
+    timeframe: "8 months",
+    client: "National Teacher Development Program",
+    focusArea: "Stakeholder Engagement",
+    summary:
+      "Bringing classroom teachers into the policy process that shaped their work — and building the facilitation muscle to keep them there.",
+    overview:
+      "A national teacher development program was being redesigned with everyone at the table except teachers. I designed and facilitated a structured teacher participation process — from classroom visits to policy panels — and coached ministry staff to run it themselves in future cycles.",
+    images: [
+      u("photo-1427504494785-3a9ca7044f45"),
+      u("photo-1543269865-cbf427effbad"),
+      u("photo-1523580494863-6f3031224c94"),
+      u("photo-1524178232363-1fb2b075b655"),
+    ],
+    color: "#10B981",
+    aspectRatio: "portrait",
+    expertise: [
+      "Stakeholder Engagement",
+      "Workshop Facilitation",
+      "Capacity Building",
+      "Participatory Design",
+      "Education Policy",
+      "Coaching & Mentoring",
+    ],
+    opportunity:
+      "Teacher attrition in the program's target regions was climbing, and redesigns kept missing the mark. The reason was structural: policy consultations happened in the capital, in formal register, on working days — three filters that reliably excluded the people with the most relevant evidence.",
+    approach:
+      "We inverted the consultation. Instead of asking teachers to come to the ministry, ministry teams went to classrooms — 45 schools in three months. Teachers' observations were documented in their own words and traced, visibly, into specific policy proposals, so participation produced evidence people could see being used.",
+    work: [
+      "Design of a multi-stage teacher participation process spanning 45 schools",
+      "Facilitation of classroom-embedded observation visits with ministry staff",
+      "Documentation and traceability system linking teacher input to policy changes",
+      "Facilitation training and coaching for 18 ministry staff",
+      "Establishment of a standing teacher advisory council with rotating membership",
+    ],
+    results: [
+      { value: "45", label: "schools visited in the embedded consultation" },
+      { value: "18", label: "ministry staff trained and coached as facilitators" },
+      { value: "27", label: "policy provisions directly revised from teacher input" },
+    ],
+    voices: [
+      {
+        quote:
+          "In twelve years, no one from the ministry had stood in my classroom and asked what I needed.",
+        name: "Primary school teacher",
+        role: "West Java",
+      },
+    ],
+    fieldNote: {
+      quote: "Participation without traceability is theater.",
+      reflection:
+        "At the closing workshop, a teacher asked the question that defined the engagement: 'What happens to what we said?' We built the traceability system because of that fear — a public record showing which suggestions shaped which provisions. The advisor that followed didn't need my design; it needed the proof that speaking up moves things.",
+    },
+    lessons: [
+      "Go to the people; consultation venues filter out exactly the voices you need.",
+      "Traceability is what turns consultation from ritual into trust.",
+      "Build facilitation capability in-house or the process dies with the consultant.",
+    ],
+    whyItMatters: [
+      "Education policy fails quietly when classroom evidence never reaches the table.",
+      "Participation systems are infrastructure — they should outlive any single reform.",
+      "Trust between teachers and ministries is built in classrooms, not conference halls.",
+    ],
+    relatedIds: ["classrooms-without-borders", "listening-tour", "convening-the-unconvened"],
+  },
+  {
+    id: "rural-pathways",
+    title: "The Rural Pathways Initiative",
+    tags: ["workforce development", "capacity building", "education & skills"],
+    type: "Capacity Building",
+    location: "Oaxaca, Mexico",
+    year: "2022",
+    timeframe: "14 months",
+    client: "State Rural Development Office",
+    focusArea: "Capacity Building",
+    summary:
+      "Building local teams' ability to run their own rural training pathways — so the program survived long after the consultants went home.",
+    overview:
+      "A state office wanted rural training pathways but had no delivery team. Rather than building a program around outside experts, I built the team: recruiting, training, and coaching local staff until they ran every stage of the pathway — design, employer relations, delivery, and evaluation — themselves.",
+    images: [
+      u("photo-1544531585-9847b68c8c86"),
+      u("photo-1517048676732-d65bc937f952"),
+      u("photo-1522202176988-66273c2fd55f"),
+      u("photo-1531482615713-2afd69097998"),
     ],
     color: "#D97706",
-    aspectRatio: "square"
-  },
-  {
-    id: "minimal-bold",
-    title: "Minimal Bold",
-    tags: ["typography", "minimalism", "poster"],
-    description: "A typographic experiment pushing the boundaries of minimalism. Using only black, white, and bold sans-serif type, these posters communicate maximum impact with minimal elements.",
-    year: "2024",
-    client: "Design Museum",
-    images: [
-      "https://images.unsplash.com/photo-1509343256512-d77a5cb3791b?w=800&q=80",
-      "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&q=80"
+    aspectRatio: "landscape",
+    expertise: [
+      "Capacity Building",
+      "Workforce Development",
+      "Coaching & Mentoring",
+      "Program Design",
+      "Community Engagement",
+      "Monitoring & Evaluation",
     ],
-    color: "#111827",
-    aspectRatio: "portrait"
+    opportunity:
+      "Two previous programs in the region had ended when external funding and staff did, leaving communities with brochures and no service. The state office knew another parachute program would burn the last of its credibility. The mandate was explicit: build capability, not dependency.",
+    approach:
+      "We hired locally from day one and apprenticed the team into every function. I worked alongside, not in front — co-designing in the first cycle, supervising in the second, and reviewing from a distance in the third. Capability transfer was the deliverable; the program was the classroom.",
+    work: [
+      "Recruitment and onboarding of a six-person local delivery team",
+      "Apprenticeship model: co-design, then supervise, then review, across three cycles",
+      "Development of plain-language playbooks for each stage of the pathway",
+      "Employer relationship coaching with local agri-businesses and cooperatives",
+      "Establishment of a peer learning network linking four rural municipalities",
+    ],
+    results: [
+      { value: "6", label: "local team members fully running the program" },
+      { value: "4", label: "municipalities connected in a peer learning network" },
+      { value: "100%", label: "of cycle-three delivery led by local staff" },
+    ],
+    voices: [
+      {
+        quote:
+          "For the first time, the people running the program were the people the program was for.",
+        name: "Municipal Liaison",
+        role: "Rural Development Office",
+      },
+    ],
+    fieldNote: {
+      quote: "Capacity building is measured by what still works when you're gone.",
+      reflection:
+        "In cycle three, I attended the team's employer meeting as an observer. They handled a difficult negotiation — a cooperative pushing back on scheduling — with a fluency I could not have taught, only made room for. I took no notes that day. There was nothing left for me to write down.",
+    },
+    lessons: [
+      "Hire for community trust; teach the technical skills.",
+      "Withdraw deliberately, on a schedule the team can see.",
+      "Playbooks written by the team outlast playbooks written for them.",
+    ],
+    whyItMatters: [
+      "Programs that leave without leaving capability behind take credibility with them.",
+      "Local ownership is built through staged handover, not signature ceremonies.",
+      "Rural workforce challenges demand rural-led solutions.",
+    ],
+    relatedIds: ["listening-tour", "skills-next-economy", "women-who-build"],
   },
   {
-    id: "motion-blur",
-    title: "Motion Blur",
-    tags: ["motion", "digital", "animation"],
-    description: "Exploration of movement and time through static imagery that suggests motion. This project captures the essence of speed and fluidity, freezing dynamic moments in visually striking compositions.",
-    year: "2023",
-    client: "Sports Brand",
+    id: "first-hundred-days",
+    title: "Designing the First 100 Days",
+    tags: ["program design", "project management", "stakeholder engagement"],
+    type: "Program Launch",
+    location: "Amman, Jordan",
+    year: "2022",
+    timeframe: "5 months",
+    client: "National Youth Employment Task Force",
+    focusArea: "Program Design",
+    summary:
+      "Designing the launch plan for a new national youth employment initiative — the operating system, governance, and first-100-days roadmap.",
+    overview:
+      "A newly formed national task force had a mandate, a budget, and no operating model. I designed its launch: governance structures, decision rights, delivery routines, and a first-100-days roadmap that turned twenty-two institutions' expectations into a single coordinated start.",
     images: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-      "https://images.unsplash.com/photo-1504805572947-34fad45aed93?w=800&q=80"
+      u("photo-1517048676732-d65bc937f952"),
+      u("photo-1552664730-d307ca884978"),
+      u("photo-1523580494863-6f3031224c94"),
+      u("photo-1497486751825-1233686d5d80"),
+    ],
+    color: "#0EA5E9",
+    aspectRatio: "square",
+    expertise: [
+      "Program Design",
+      "Project Management",
+      "Governance Design",
+      "Stakeholder Engagement",
+      "Facilitation",
+      "Monitoring & Evaluation",
+    ],
+    opportunity:
+      "Twenty-two institutions had been named to the task force — a recipe for either gridlock or theater. With no decision rights, no delivery routines, and political attention that would not wait, the initiative risked spending its first year negotiating its own org chart instead of serving young people.",
+    approach:
+      "I designed for the first 100 days as if they were a product: one visible early win, a weekly operating rhythm, decision rights that could be explained in one slide, and a scoreboard everyone could read. Governance was kept light and provisional — designed to be revised by the people using it.",
+    work: [
+      "Design of governance and decision-rights architecture across 22 institutions",
+      "Creation of the first-100-days roadmap with owners, milestones, and dependencies",
+      "Facilitation of the task force's founding sessions and operating agreements",
+      "Setup of delivery routines: weekly reviews, escalations, and a public scoreboard",
+      "Delivery of the first visible win: a rapid upskilling pilot within 60 days",
+    ],
+    results: [
+      { value: "22", label: "institutions aligned on one operating model" },
+      { value: "60 days", label: "to first visible pilot launch" },
+      { value: "1 slide", label: "needed to explain who decides what" },
+    ],
+    voices: [
+      {
+        quote:
+          "The scoreboard changed the culture. Meetings stopped being about status and became about unblocking.",
+        name: "Task Force Secretariat Lead",
+        role: "National Youth Employment Initiative",
+      },
+    ],
+    fieldNote: {
+      quote: "New institutions don't need more meetings. They need a rhythm.",
+      reflection:
+        "The task force's first instinct was to schedule more coordination meetings — one per institution, effectively. We replaced them with one weekly review with one scoreboard. Watching twenty-two institutions settle into a shared rhythm was the clearest demonstration I've seen that structure is not bureaucracy; it is kindness to busy people.",
+    },
+    lessons: [
+      "Decision rights, published early, prevent months of quiet turf negotiation.",
+      "One visible early win funds the political capital for the long game.",
+      "Light governance designed for revision beats heavy governance designed to impress.",
+    ],
+    whyItMatters: [
+      "Launch phase decisions echo for years; design them as deliberately as the program itself.",
+      "Cross-institutional initiatives live or die on operating rhythm.",
+      "Visible momentum is the currency that keeps coalitions funded.",
+    ],
+    relatedIds: ["blueprint-to-bootcamp", "building-bridges-bogota", "convening-the-unconvened"],
+  },
+  {
+    id: "women-who-build",
+    title: "Women Who Build",
+    tags: ["education & skills", "workforce development", "capacity building"],
+    type: "Program Design",
+    location: "Lagos, Nigeria",
+    year: "2022",
+    timeframe: "11 months",
+    client: "Construction Sector Skills Partnership",
+    focusArea: "Education & Skills",
+    summary:
+      "Opening construction-sector careers to women — redesigning recruitment, training, and site culture so that the first cohort would not be the last.",
+    overview:
+      "A sector skills partnership wanted to move beyond token female enrollment in construction trades. I designed a program that treated retention as the core metric — rebuilding recruitment, training schedules, mentoring, and site conditions together, because each alone would have failed.",
+    images: [
+      u("photo-1529156069898-49953e39b3ac"),
+      u("photo-1544531585-9847b68c8c86"),
+      u("photo-1522202176988-66273c2fd55f"),
+      u("photo-1523050854058-8df90110c9f1"),
+    ],
+    color: "#EC4899",
+    aspectRatio: "portrait",
+    expertise: [
+      "Program Design",
+      "Workforce Development",
+      "Stakeholder Engagement",
+      "Capacity Building",
+      "Inclusive Recruitment",
+      "Monitoring & Evaluation",
+    ],
+    opportunity:
+      "Women made up under 4% of the construction trade workforce, and earlier attempts had produced cohorts that enrolled impressively and evaporated by month three. Training existed; what didn't exist was a system that accounted for site culture, safety, facilities, and the economics of showing up.",
+    approach:
+      "We designed backwards from retention. Everything — stipend timing, tool provision, site facilities, mentor matching, employer codes of conduct — was treated as part of the training program. Employers signed on to site-level standards, not just quotas, and the program tracked retention weekly, not annually.",
+    work: [
+      "Retention-first program design across recruitment, training, and placement",
+      "Negotiation of employer site standards: facilities, mentoring, and conduct",
+      "Recruitment campaign co-created with women already working in adjacent trades",
+      "Weekly retention monitoring with rapid-response problem solving",
+      "Peer mentor training for twelve tradeswomen as program anchors",
+    ],
+    results: [
+      { value: "64", label: "women completed the full training pathway" },
+      { value: "88%", label: "retained in trades six months after placement" },
+      { value: "12", label: "trained peer mentors anchoring later cohorts" },
+    ],
+    voices: [
+      {
+        quote:
+          "The program didn't just train us. It changed what the site expects a builder to look like.",
+        name: "Graduate, first cohort",
+        role: "Certified electrician",
+      },
+    ],
+    fieldNote: {
+      quote: "A locker is a policy statement.",
+      reflection:
+        "The single most requested change was not a workshop topic but changing rooms and lockable storage on-site. When we funded facilities before marketing, applications rose on their own. It taught me that inclusion is rarely a messaging problem — it is an infrastructure problem with a messaging symptom.",
+    },
+    lessons: [
+      "Design for retention first; recruitment numbers follow.",
+      "Facilities and stipend mechanics are inclusion policy, not administration.",
+      "Peer mentors convert individual success into structural change.",
+    ],
+    whyItMatters: [
+      "Sector-wide inclusion fails when treated as a marketing exercise.",
+      "Workplace conditions are training conditions.",
+      "The first cohort carries the weight of every cohort after it — design for their survival.",
+    ],
+    relatedIds: ["rural-pathways", "listening-tour", "skills-next-economy"],
+  },
+  {
+    id: "convening-the-unconvened",
+    title: "Convening the Unconvened",
+    tags: ["partnership development", "international collaboration", "stakeholder engagement"],
+    type: "Partnership & Convening",
+    location: "Kathmandu, Nepal",
+    year: "2021",
+    timeframe: "7 months",
+    client: "Regional Migration & Skills Forum",
+    focusArea: "Partnership Development",
+    summary:
+      "Bringing migrant worker associations, recruiters, and two governments into one room for the first time — and designing the forum that kept them there.",
+    overview:
+      "Migrant workers from the region were affected by every decision and present at none of them. I designed and convened a forum that gave worker associations a formal seat alongside recruiters and government agencies — the first structure of its kind in the corridor, and now a standing body.",
+    images: [
+      u("photo-1523580494863-6f3031224c94"),
+      u("photo-1529156069898-49953e39b3ac"),
+      u("photo-1522202176988-66273c2fd55f"),
+      u("photo-1517245386807-bb43f82c33c4"),
     ],
     color: "#7C3AED",
-    aspectRatio: "landscape"
-  }
+    aspectRatio: "landscape",
+    expertise: [
+      "Partnership Development",
+      "Stakeholder Engagement",
+      "International Collaboration",
+      "Facilitation",
+      "Institutional Design",
+      "Capacity Building",
+    ],
+    opportunity:
+      "Recruitment corridors linked two countries, dozens of agencies, and hundreds of thousands of workers — with no shared body where worker voices had standing. Advocacy happened in protest; regulation happened in closed rooms. Everyone acknowledged the gap; no one had a design for closing it, because no one trusted the others enough to share a table.",
+    approach:
+      "Trust had to be built asymmetrically: months of separate pre-negotiations with each constituency before any joint meeting. Workers set the agenda for the first session; recruiters and officials responded rather than presented. Seating, speaking order, and language access were treated as governance, not logistics.",
+    work: [
+      "Separate trust-building consultation rounds with each constituency",
+      "Design of the forum's composition, charter, and decision procedures",
+      "Convening of the founding forum with formal worker association representation",
+      "Establishment of working groups on recruitment fees and grievance pathways",
+      "Coaching worker association leaders in formal negotiation settings",
+    ],
+    results: [
+      { value: "1st", label: "forum of its kind with formal worker representation" },
+      { value: "2", label: "governments at one table with worker associations" },
+      { value: "Standing", label: "body that continues to meet quarterly" },
+    ],
+    voices: [
+      {
+        quote:
+          "We were always the subject of the meeting. This was the first time we were a member of it.",
+        name: "General Secretary",
+        role: "Migrant Workers' Association",
+      },
+    ],
+    fieldNote: {
+      quote: "Who sets the agenda decides the meeting before it starts.",
+      reflection:
+        "For the founding session, we gave the agenda entirely to the worker associations. Officials later admitted they arrived uneasy — and left converted, because the agenda was more demanding of recruiters than of anyone else. Fairness, it turns out, is persuasive. The hand that sets the agenda holds the meeting.",
+    },
+    lessons: [
+      "Pre-negotiate separately before convening jointly; trust is built bilaterally.",
+      "Agenda-setting power is the most concrete form of inclusion.",
+      "Design seating, speaking order, and language as governance.",
+    ],
+    whyItMatters: [
+      "Migration and skills systems improve fastest when workers hold formal power.",
+      "Convening is a discipline: composition and process are the strategy.",
+      "Regional labor corridors need institutions, not just agreements.",
+    ],
+    relatedIds: ["building-bridges-bogota", "classrooms-without-borders", "teachers-at-the-table"],
+  },
 ];
 
+export const services: { title: string; description: string }[] = [
+  {
+    title: "Partnership Strategy",
+    description:
+      "Designing coalitions, compacts, and governance structures that align organizations around shared outcomes — and survive leadership changes.",
+  },
+  {
+    title: "Education & Skills Initiatives",
+    description:
+      "From curriculum strategy to national program design, building learning systems that connect classrooms to real labor-market demand.",
+  },
+  {
+    title: "Stakeholder Engagement",
+    description:
+      "Listening processes, embedded consultation, and participation systems that bring the right voices to the table with real standing.",
+  },
+  {
+    title: "Workforce Development",
+    description:
+      "Employer-driven training pathways, retention-first program design, and labor-market-aligned skills systems across sectors and borders.",
+  },
+  {
+    title: "Workshop Facilitation",
+    description:
+      "Multi-stakeholder sessions, working groups, and negotiations designed to produce decisions — not just dialogue.",
+  },
+  {
+    title: "Project Leadership",
+    description:
+      "Launch-phase design, governance, operating rhythms, and first-100-days roadmaps for new initiatives and task forces.",
+  },
+  {
+    title: "Advisory Support",
+    description:
+      "Strategic counsel for funders, ministries, and NGOs on program architecture, stakeholder strategy, and capability building.",
+  },
+];
+
+export const contactEmail = "hello@marybantug.com";
+
 export const getProjectById = (id: string): Project | undefined => {
-  return projects.find(project => project.id === id);
+  return projects.find((project) => project.id === id);
 };
 
 // Get unique categories from all project tags
 export const getCategories = (): string[] => {
-  const allTags = projects.flatMap(project => project.tags);
+  const allTags = projects.flatMap((project) => project.tags);
   return [...new Set(allTags)];
 };

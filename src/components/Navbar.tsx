@@ -53,7 +53,7 @@ const Navbar = ({ selectedCategory, onCategoryChange }: NavbarProps) => {
               to="/"
               className="text-lg font-medium tracking-tight hover:opacity-70 transition-opacity duration-300"
             >
-              Jordan Studio
+              Mary Bantug
             </Link>
 
             {/* Center: Category Filters (Desktop only, only on Home page) */}
