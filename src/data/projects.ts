@@ -28,7 +28,85 @@ export interface Project {
 const u = (id: string, w = 1400) =>
   `https://images.unsplash.com/${id}?w=${w}&q=80`;
 
-export const projects: Project[] = [
+export const projects: Project[] = [ {
+    id: "esp05-tanzania",
+    title: "Bridging Classroom to Industry for Women in Tanzania",
+    tags: ["women's empowerment", "workforce development", "program management"],
+    type: "TECHNICAL COOPERATION & WORKFORCE DEVELOPMENT",
+    location: "Morogoro & Dodoma Regions, Tanzania",
+    year: "2022–2026",
+    timeframe: "4 years",
+    client: "Colleges and Institutes Canada",
+    focusArea: "Workforce Development",
+    summary:
+      "End-to-end management of a four-year women's empowerment and workforce development program across two Tanzanian regions — from proposal through reporting to close-out.",
+    overview:
+      "ESP05 set out to open doors for women in the Morogoro and Dodoma regions through skills training and stronger connections between training institutions and local industry. I led the program end to end — carrying it from the original proposal through implementation, donor reporting, and close-out — and facilitated the sessions that brought Folk Development Colleges, community organizations, and employers to the same table.",
+    images: [
+      "/TZ_Header.JPG",
+      "/TZ_Opportunities.jpeg",
+      "/TZ_Approach.jpeg",
+      u("photo-1529156069898-49953e39b3ac"),
+    ],
+    color: "#10B981",
+    aspectRatio: "landscape",
+    expertise: [
+      "End-to-End Project Management",
+      "Workshop Facilitation",
+      "Relationship Management",
+      "Cross-Functional Team Leadership",
+      "Budget & Risk Management",
+      "Event Planning",
+    ],
+    opportunity:
+      "In Morogoro and Dodoma, women faced real barriers to earning: training existed, but pathways from the classroom to actual work were thin. Folk Development Colleges like Bigwa and Munguri were trusted community institutions with underused connections to local employers, and community-based organizations held relationships no external team could replicate. The gap wasn't willingness on any side — it was structure: nobody owned the links between training, community, and industry.",
+    approach:
+      "I managed ESP05 as a full-cycle engagement, owning it from proposal to close. That meant building the partnership architecture first — aligning Colleges and Institutes Canada, the two Folk Development Colleges, community-based organizations, and Ministry representatives around clear roles — then running delivery through cross-functional teams in both regions. Where I wasn't managing, I was teaching: facilitating sessions that built partners' own capacity, mainly on Industry Engagement and Designing Community Events, so the connections outlasted the program.",
+    work: [
+      "Led the program full-cycle: proposal development, implementation, donor reporting, and close-out",
+      "Facilitated partner and staff sessions, mainly on Industry Engagement and Designing Community Events",
+      "Managed relationships across Colleges and Institutes Canada, Bigwa FDC, Munguri FDC, community-based organizations, and Ministry representatives",
+      "Led cross-functional teams delivering across the Morogoro and Dodoma regions",
+      "Owned budget and risk management across the full four-year cycle",
+      "Planned and delivered community events and partner convenings in both regions",
+    ],
+    results: [
+      { value: "2", label: "regions reached — Morogoro and Dodoma" },
+      { value: "2", label: "Folk Development Colleges as core delivery partners" },
+      { value: "4 yrs", label: "delivered from proposal to close-out" },
+      { value: "2026", label: "closing with structures partners run themselves" },
+    ],
+    voices: [
+      {
+        quote:
+          "The sessions didn't just inform us — we left with a plan we could run ourselves.",
+        name: "Program partner",
+        role: "Folk Development College",
+      },
+      {
+        quote:
+          "Mary held the whole map — colleges, communities, ministry, budget — and made it feel manageable.",
+        name: "Team member",
+        role: "Cross-functional delivery team",
+      },
+    ],
+    fieldNote: {
+      quote: "A program succeeds when the partners stop needing the manager.",
+      reflection:
+        "Facilitating sessions on Industry Engagement and Designing Community Events taught me the same lesson from both sides of the room: the strongest outcomes came when partners designed the next step themselves. My job was to hold the structure — the budget, the risks, the relationships — so they had the room to do it.",
+    },
+    lessons: [
+      "End-to-end ownership matters: the person who writes the proposal should still be there at close-out.",
+      "Facilitation is a sustainability strategy — partners who build the skills keep the results.",
+      "In multi-partner programs, relationship management is not soft work; it is the work.",
+    ],
+    whyItMatters: [
+      "Women's economic empowerment depends on real links between training and local industry, not training alone.",
+      "Local institutions like Folk Development Colleges are the most durable delivery channels a program can build on.",
+      "Programs designed for handover from day one are the ones that survive their own closing dates.",
+    ],
+    relatedIds: ["skills-next-economy", "rural-pathways", "blueprint-to-bootcamp"],
+  },
   {
     id: "building-bridges-bogota",
     title: "Building Bridges in Bogotá",
@@ -392,85 +470,7 @@ export const projects: Project[] = [
     ],
     relatedIds: ["skills-next-economy", "first-hundred-days", "building-bridges-bogota"],
   },
-  {
-    id: "esp05-tanzania",
-    title: "Bridging Classroom to Industry for Women in Tanzania",
-    tags: ["women's empowerment", "workforce development", "program management"],
-    type: "TECHNICAL COOPERATION & WORKFORCE DEVELOPMENT",
-    location: "Morogoro & Dodoma Regions, Tanzania",
-    year: "2022–2026",
-    timeframe: "4 years",
-    client: "Colleges and Institutes Canada",
-    focusArea: "Workforce Development",
-    summary:
-      "End-to-end management of a four-year women's empowerment and workforce development program across two Tanzanian regions — from proposal through reporting to close-out.",
-    overview:
-      "ESP05 set out to open doors for women in the Morogoro and Dodoma regions through skills training and stronger connections between training institutions and local industry. I led the program end to end — carrying it from the original proposal through implementation, donor reporting, and close-out — and facilitated the sessions that brought Folk Development Colleges, community organizations, and employers to the same table.",
-    images: [
-      "/TZ_Header.JPG",
-      "/TZ_Opportunities.jpeg",
-      "/TZ_Approach.jpeg",
-      u("photo-1529156069898-49953e39b3ac"),
-    ],
-    color: "#10B981",
-    aspectRatio: "landscape",
-    expertise: [
-      "End-to-End Project Management",
-      "Workshop Facilitation",
-      "Relationship Management",
-      "Cross-Functional Team Leadership",
-      "Budget & Risk Management",
-      "Event Planning",
-    ],
-    opportunity:
-      "In Morogoro and Dodoma, women faced real barriers to earning: training existed, but pathways from the classroom to actual work were thin. Folk Development Colleges like Bigwa and Munguri were trusted community institutions with underused connections to local employers, and community-based organizations held relationships no external team could replicate. The gap wasn't willingness on any side — it was structure: nobody owned the links between training, community, and industry.",
-    approach:
-      "I managed ESP05 as a full-cycle engagement, owning it from proposal to close. That meant building the partnership architecture first — aligning Colleges and Institutes Canada, the two Folk Development Colleges, community-based organizations, and Ministry representatives around clear roles — then running delivery through cross-functional teams in both regions. Where I wasn't managing, I was teaching: facilitating sessions that built partners' own capacity, mainly on Industry Engagement and Designing Community Events, so the connections outlasted the program.",
-    work: [
-      "Led the program full-cycle: proposal development, implementation, donor reporting, and close-out",
-      "Facilitated partner and staff sessions, mainly on Industry Engagement and Designing Community Events",
-      "Managed relationships across Colleges and Institutes Canada, Bigwa FDC, Munguri FDC, community-based organizations, and Ministry representatives",
-      "Led cross-functional teams delivering across the Morogoro and Dodoma regions",
-      "Owned budget and risk management across the full four-year cycle",
-      "Planned and delivered community events and partner convenings in both regions",
-    ],
-    results: [
-      { value: "2", label: "regions reached — Morogoro and Dodoma" },
-      { value: "2", label: "Folk Development Colleges as core delivery partners" },
-      { value: "4 yrs", label: "delivered from proposal to close-out" },
-      { value: "2026", label: "closing with structures partners run themselves" },
-    ],
-    voices: [
-      {
-        quote:
-          "The sessions didn't just inform us — we left with a plan we could run ourselves.",
-        name: "Program partner",
-        role: "Folk Development College",
-      },
-      {
-        quote:
-          "Mary held the whole map — colleges, communities, ministry, budget — and made it feel manageable.",
-        name: "Team member",
-        role: "Cross-functional delivery team",
-      },
-    ],
-    fieldNote: {
-      quote: "A program succeeds when the partners stop needing the manager.",
-      reflection:
-        "Facilitating sessions on Industry Engagement and Designing Community Events taught me the same lesson from both sides of the room: the strongest outcomes came when partners designed the next step themselves. My job was to hold the structure — the budget, the risks, the relationships — so they had the room to do it.",
-    },
-    lessons: [
-      "End-to-end ownership matters: the person who writes the proposal should still be there at close-out.",
-      "Facilitation is a sustainability strategy — partners who build the skills keep the results.",
-      "In multi-partner programs, relationship management is not soft work; it is the work.",
-    ],
-    whyItMatters: [
-      "Women's economic empowerment depends on real links between training and local industry, not training alone.",
-      "Local institutions like Folk Development Colleges are the most durable delivery channels a program can build on.",
-      "Programs designed for handover from day one are the ones that survive their own closing dates.",
-    ],
-    relatedIds: ["skills-next-economy", "rural-pathways", "blueprint-to-bootcamp"],
-  },
+  
   {
     id: "rural-pathways",
     title: "The Rural Pathways Initiative",
