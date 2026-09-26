@@ -753,7 +753,7 @@ export const projects: Project[] = [
       "Convening is a discipline: composition and process are the strategy.",
       "Regional labor corridors need institutions, not just agreements.",
     ],
-    relatedIds: ["building-bridges-bogota", "classrooms-without-borders", "teachers-at-the-table"],
+    relatedIds: ["building-bridges-bogota", "classrooms-without-borders", "esp05-tanzania"],
   },
 ];
 
