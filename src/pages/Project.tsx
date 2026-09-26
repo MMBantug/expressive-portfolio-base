@@ -257,7 +257,7 @@ const Project = () => {
         <section className="py-20 md:py-28 px-6">
           <div className="max-w-6xl">
             <Reveal>
-              <SectionHeading index="06 — Outcomes" title="Results & Impact" />
+              <SectionHeading index="06 — Outcomes" title="Project Highlights" />
             </Reveal>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {project.results.map((result, i) => (
