@@ -71,7 +71,7 @@ export const projects: Project[] = [ {
       "Planned and delivered community events and partner convenings in both regions",
     ],
     results: [
-      { value: "Key stakeholders engaged", label: "Engaged XX organizations from government, education & industry" },
+      { value: "XX", label: "Key stakeholders engaged across government, education & industry" },
       { value: "2", label: "Folk Development Colleges as core delivery partners" },
       { value: "4 yrs", label: "delivered from proposal to close-out" },
       { value: "2026", label: "closing with structures partners run themselves" },
