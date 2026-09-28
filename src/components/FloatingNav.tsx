@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ContactDrawer from "@/components/ContactDrawer";
 
-const FloatingNav = () => {
+const FloatingNav = ({ onWorkClick }: { onWorkClick?: () => void } = {}) => {
   const location = useLocation();
   const currentPath = location.pathname;
   const [contactOpen, setContactOpen] = useState(false);
@@ -28,6 +28,7 @@ const FloatingNav = () => {
               onClick={(e) => {
                 if (item.path === "/" && isActive("/")) {
                   e.preventDefault();
+                  onWorkClick?.();
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }
               }}
