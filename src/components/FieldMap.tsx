@@ -43,7 +43,7 @@ const FieldMap = () => {
 
         {/* Map and location briefing */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-[minmax(0,1.8fr)_minmax(280px,1fr)] border-y border-border">
-          <div className="relative w-full overflow-hidden bg-secondary/40 self-start">
+          <div className="relative flex w-full items-center overflow-hidden bg-secondary/40">
             <ComposableMap
               projection="geoEqualEarth"
               projectionConfig={{ scale: 175, center: [10, 8] }}
@@ -125,7 +125,7 @@ const FieldMap = () => {
           </div>
 
           {/* Detail panel */}
-          <div ref={detailsRef} className="min-w-0 border-t md:border-t-0 md:border-l border-border px-5 py-7 md:px-7 md:py-8 md:h-[min(39vw,420px)] md:min-h-[320px] md:overflow-y-auto" aria-live="polite">
+          <div ref={detailsRef} className="min-w-0 border-t md:border-t-0 md:border-l border-border px-5 py-7 md:px-7 md:py-8 md:min-h-[420px]" aria-live="polite">
             {active ? (
               <div key={active.id} className="animate-fade-in">
                 <p className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
