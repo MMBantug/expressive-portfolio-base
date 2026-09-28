@@ -12,11 +12,13 @@ import { mapLocations, type MapLocation } from "@/data/fieldMap";
 import { getProjectById } from "@/data/projects";
 
 // Unique country flags for the project locations (home base excluded).
+// Each flag is wired to one representative location so clicking it behaves
+// like clicking that country's pin on the map.
 const countryFlags = mapLocations
   .filter((l) => l.kind !== "home")
-  .reduce<{ code: string; country: string }[]>((acc, l) => {
+  .reduce<{ code: string; country: string; location: MapLocation }[]>((acc, l) => {
     if (!acc.some((c) => c.code === l.countryCode)) {
-      acc.push({ code: l.countryCode, country: l.country });
+      acc.push({ code: l.countryCode, country: l.country, location: l });
     }
     return acc;
   }, []);
@@ -182,14 +184,21 @@ const FieldMap = () => {
                 </div>
                 <div className="mt-3 flex flex-wrap items-center gap-2">
                   {countryFlags.map((c) => (
-                    <img
+                    <button
                       key={c.code}
-                      src={`https://flagcdn.com/w80/${c.code}.png`}
-                      alt={`Flag of ${c.country}`}
+                      type="button"
+                      onClick={() => selectLocation(c.location)}
+                      aria-label={`Show projects in ${c.country}`}
                       title={c.country}
-                      loading="lazy"
-                      className="h-7 w-7 rounded-full object-cover ring-1 ring-border shadow-sm"
-                    />
+                      className="rounded-full transition-transform duration-200 hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+                    >
+                      <img
+                        src={`https://flagcdn.com/w80/${c.code}.png`}
+                        alt=""
+                        loading="lazy"
+                        className="h-7 w-7 rounded-full object-cover ring-1 ring-border shadow-sm"
+                      />
+                    </button>
                   ))}
                 </div>
                 <div className="mt-3 border-t border-border pt-4 flex justify-between text-sm">
