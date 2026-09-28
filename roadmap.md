@@ -1,2 +1,2 @@
-- [ ] Make map project links reliably open the same project pages as Work cards.
-- [ ] Add a Toronto home-base pin without presenting it as a project.
+- [x] Make map project links reliably open the same project pages as Work cards.
+- [x] Add a Toronto home-base pin without presenting it as a project.

@@ -18,7 +18,7 @@ const FieldMap = () => {
   const selectLocation = (location: MapLocation) => {
     setActive(location);
     if (window.matchMedia("(max-width: 767px)").matches) {
-      requestAnimationFrame(() => detailsRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" }));
+      requestAnimationFrame(() => detailsRef.current?.scrollIntoView({ behavior: "instant", block: "nearest" }));
     }
   };
 

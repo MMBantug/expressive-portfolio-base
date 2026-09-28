@@ -56,7 +56,7 @@ const Project = () => {
   const project = getProjectById(id || "");
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, [id]);
 
   if (!project) {
