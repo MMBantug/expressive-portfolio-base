@@ -90,29 +90,34 @@ const FieldMap = () => {
                     }}
                     style={{ default: { cursor: "pointer" } }}
                   >
-                    <circle r={17} className="fill-background/0" />
-                    <circle
-                      r={isActive ? 11 : 8}
-                      className={`${loc.kind === "home" ? "fill-primary/25" : "fill-foreground/10"} transition-all duration-300`}
-                    />
-                    <circle
-                      r={isActive ? 4.5 : 3.5}
-                      className={`${loc.kind === "home" ? "fill-primary" : "fill-foreground"} transition-all duration-300`}
-                    />
-                    <text
-                      textAnchor="middle"
-                      x={loc.labelOffset?.dx ?? 0}
-                      y={loc.labelOffset?.dy ?? -13}
-                      className="fill-foreground"
-                      style={{
-                        fontSize: 9,
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                        pointerEvents: "none",
-                      }}
-                    >
-                      {loc.city}{loc.kind === "home" ? " · Base" : ""}
-                    </text>
+                     {loc.pinOffset && (
+                       <line x1={0} y1={0} x2={loc.pinOffset.dx} y2={loc.pinOffset.dy} className="stroke-foreground/40 pointer-events-none" strokeWidth={0.7} />
+                     )}
+                     <g transform={`translate(${loc.pinOffset?.dx ?? 0},${loc.pinOffset?.dy ?? 0})`}>
+                       <circle r={12} className="fill-background/0" />
+                       <circle
+                         r={isActive ? 11 : 8}
+                         className={`${loc.kind === "home" ? "fill-primary/25" : "fill-foreground/10"} transition-all duration-300`}
+                       />
+                       <circle
+                         r={isActive ? 4.5 : 3.5}
+                         className={`${loc.kind === "home" ? "fill-primary" : "fill-foreground"} transition-all duration-300`}
+                       />
+                       <text
+                         textAnchor="middle"
+                         x={loc.labelOffset?.dx ?? 0}
+                         y={loc.labelOffset?.dy ?? -13}
+                         className="fill-foreground"
+                         style={{
+                           fontSize: 9,
+                           letterSpacing: "0.08em",
+                           textTransform: "uppercase",
+                           pointerEvents: "none",
+                         }}
+                       >
+                         {loc.city}{loc.kind === "home" ? " · Base" : ""}
+                       </text>
+                     </g>
                   </Marker>
                 );
               })}
