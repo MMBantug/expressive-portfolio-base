@@ -10,6 +10,8 @@ export interface MapLocation {
   kind?: "home";
   city: string;
   country: string;
+  /** ISO 3166-1 alpha-2 code, lowercase — used for the flag badges. */
+  countryCode: string;
   coordinates: [number, number];
   years: string;
   summary: string;
@@ -26,6 +28,7 @@ export const mapLocations: MapLocation[] = [
     kind: "home",
     city: "Toronto",
     country: "Canada",
+    countryCode: "ca",
     coordinates: [-79.3832, 43.6532],
     years: "Home base",
     summary: "Based in Toronto, working with partners across regions.",
@@ -35,6 +38,7 @@ export const mapLocations: MapLocation[] = [
     id: "nairobi",
     city: "Nairobi",
     country: "Kenya",
+    countryCode: "ke",
     coordinates: [36.8219, -1.2921],
     years: "2017–2020",
     summary: "National institutions, labour market systems and leadership development.",
@@ -69,6 +73,7 @@ export const mapLocations: MapLocation[] = [
     id: "kisumu",
     city: "Kisumu",
     country: "Kenya",
+    countryCode: "ke",
     coordinates: [34.7617, -0.0917],
     years: "2017–2020",
     summary: "Blue Economy pathways and applied curriculum with regional colleges.",
@@ -93,6 +98,7 @@ export const mapLocations: MapLocation[] = [
     id: "tanzania",
     city: "Morogoro & Dodoma",
     country: "Tanzania",
+    countryCode: "tz",
     coordinates: [37.6612, -6.8235],
     years: "2022–2026",
     summary: "Full-cycle management of a women's skills and industry-linkage program.",
@@ -110,6 +116,7 @@ export const mapLocations: MapLocation[] = [
     id: "manila",
     city: "Manila",
     country: "Philippines",
+    countryCode: "ph",
     coordinates: [120.9842, 14.5995],
     years: "Specialist missions",
     summary: "Short-term technical assignments in animation and skills strategy.",
@@ -132,6 +139,7 @@ export const mapLocations: MapLocation[] = [
     id: "belize",
     city: "Belize City",
     country: "Belize",
+    countryCode: "bz",
     coordinates: [-88.1962, 17.5046],
     years: "2022–2024",
     summary: "Ecotourism training pathways with national training institutions.",
@@ -148,6 +156,7 @@ export const mapLocations: MapLocation[] = [
     id: "dominica",
     city: "Roseau",
     country: "Dominica",
+    countryCode: "dm",
     coordinates: [-61.3874, 15.3092],
     years: "2022–2024",
     summary: "Ecotourism curriculum and community-based delivery partnerships.",

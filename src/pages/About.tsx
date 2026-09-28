@@ -133,8 +133,8 @@ const About = () => {
 
   return (
     <>
+      <Navbar />
       <main className="min-h-screen bg-background page-transition">
-        <Navbar />
 
         {/* 01 — Hero statement */}
         <section className="min-h-[60vh] flex flex-col justify-center px-6 pt-32 pb-16">
