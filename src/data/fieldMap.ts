@@ -14,6 +14,7 @@ export interface MapLocation {
   years: string;
   summary: string;
   labelOffset?: { dx: number; dy: number };
+  pinOffset?: { dx: number; dy: number };
   engagements: MapEngagement[];
 }
 
@@ -71,7 +72,8 @@ export const mapLocations: MapLocation[] = [
     coordinates: [34.7617, -0.0917],
     years: "2017–2020",
     summary: "Blue Economy pathways and applied curriculum with regional colleges.",
-    labelOffset: { dx: -26, dy: -16 },
+    pinOffset: { dx: -20, dy: -12 },
+    labelOffset: { dx: 0, dy: -13 },
     engagements: [
       {
         title: "Women Who Build",
