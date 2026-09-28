@@ -7,6 +7,7 @@ import FieldMap from "@/components/FieldMap";
 
 const ProjectIndex = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("everything");
+  const [mapResetKey, setMapResetKey] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -43,8 +44,8 @@ const ProjectIndex = () => {
         onCategoryChange={setSelectedCategory}
       />
       <main className="min-h-screen bg-background page-transition">
-        {/* Field map */}
-        <FieldMap />
+        {/* Field map (remounted on Work click so the panel resets to the overview) */}
+        <FieldMap key={mapResetKey} />
 
         {/* Project Grid */}
         <section ref={sectionRef} className="pt-12 pb-24 px-6">
@@ -117,7 +118,7 @@ const ProjectIndex = () => {
           </div>
         </section>
       </main>
-      <FloatingNav />
+      <FloatingNav onWorkClick={() => setMapResetKey((k) => k + 1)} />
     </>
   );
 };
