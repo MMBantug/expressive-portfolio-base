@@ -88,6 +88,7 @@ const FieldMap = () => {
                     }}
                     style={{ default: { cursor: "pointer" } }}
                   >
+                    <circle r={17} className="fill-background/0" />
                     <circle
                       r={isActive ? 11 : 8}
                       className={`${loc.kind === "home" ? "fill-primary/25" : "fill-foreground/10"} transition-all duration-300`}
