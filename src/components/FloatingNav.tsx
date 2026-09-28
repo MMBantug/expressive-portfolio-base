@@ -25,6 +25,12 @@ const FloatingNav = () => {
             <Link
               key={item.name}
               to={item.path}
+              onClick={(e) => {
+                if (item.path === "/" && isActive("/")) {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
               className={`px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                 isActive(item.path)
                   ? "bg-background text-foreground shadow-sm"
