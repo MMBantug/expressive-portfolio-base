@@ -7,6 +7,7 @@ export interface MapEngagement {
 
 export interface MapLocation {
   id: string;
+  kind?: "home";
   city: string;
   country: string;
   coordinates: [number, number];
@@ -19,6 +20,16 @@ export interface MapLocation {
 // Placeholder links: each engagement currently points to an existing page
 // in the Work section until the dedicated case studies are written.
 export const mapLocations: MapLocation[] = [
+  {
+    id: "toronto",
+    kind: "home",
+    city: "Toronto",
+    country: "Canada",
+    coordinates: [-79.3832, 43.6532],
+    years: "Home base",
+    summary: "Based in Toronto, working with partners across regions.",
+    engagements: [],
+  },
   {
     id: "nairobi",
     city: "Nairobi",

@@ -1,0 +1,1 @@
+- Keep map locations and their linked engagements in `src/data/fieldMap.ts`; mark the Toronto home base separately from project locations so it is never counted as an engagement.
