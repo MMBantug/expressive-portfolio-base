@@ -37,11 +37,21 @@ const ProjectIndex = () => {
     );
   }, [selectedCategory]);
 
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    requestAnimationFrame(() => {
+      const el = sectionRef.current;
+      if (!el) return;
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: "smooth" });
+    });
+  };
+
   return (
     <>
       <Navbar 
         selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
+        onCategoryChange={handleCategoryChange}
       />
       <main className="min-h-screen bg-background page-transition">
         {/* Field map (remounted on Work click so the panel resets to the overview) */}
