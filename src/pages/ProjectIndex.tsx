@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import Navbar from "@/components/Navbar";
 import FloatingNav from "@/components/FloatingNav";
+import FieldMap from "@/components/FieldMap";
 
 const ProjectIndex = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("everything");
@@ -43,8 +44,11 @@ const ProjectIndex = () => {
           onCategoryChange={setSelectedCategory}
         />
         
+        {/* Field map */}
+        <FieldMap />
+
         {/* Project Grid */}
-        <section ref={sectionRef} className="pt-32 md:pt-24 pb-24 px-6">
+        <section ref={sectionRef} className="pt-12 pb-24 px-6">
           {/* Mobile: Pinterest-style 2-column grid with equal sizes */}
           <div className="grid grid-cols-2 gap-3 md:hidden">
             {filteredProjects.map((project, index) => (
