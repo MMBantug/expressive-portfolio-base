@@ -41,9 +41,9 @@ const FieldMap = () => {
           </p>
         </div>
 
-        {/* Map */}
-        <div className="relative mt-8">
-          <div className="relative w-full overflow-hidden bg-secondary/40">
+        {/* Map and location briefing */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-[minmax(0,1.8fr)_minmax(280px,1fr)] border-y border-border">
+          <div className="relative w-full overflow-hidden bg-secondary/40 self-start">
             <ComposableMap
               projection="geoEqualEarth"
               projectionConfig={{ scale: 175, center: [10, 8] }}
@@ -79,6 +79,8 @@ const FieldMap = () => {
                     tabIndex={0}
                     aria-label={`${loc.city}, ${loc.country}${loc.kind === "home" ? ", home base" : `, ${loc.engagements.length} ${loc.engagements.length === 1 ? "project" : "projects"}`}`}
                     aria-pressed={isActive}
+                     onMouseEnter={() => setActive(loc)}
+                     onFocus={() => setActive(loc)}
                     onClick={() => selectLocation(loc)}
                     onKeyDown={(event) => {
                       if (event.key === "Enter" || event.key === " ") {
@@ -118,9 +120,9 @@ const FieldMap = () => {
           </div>
 
           {/* Detail panel */}
-          <div ref={detailsRef} className="mt-6 border-t border-border pt-6 min-h-[150px]" aria-live="polite">
+          <div ref={detailsRef} className="min-w-0 border-t md:border-t-0 md:border-l border-border px-5 py-7 md:px-7 md:py-8 md:h-[min(39vw,420px)] md:min-h-[320px] md:overflow-y-auto" aria-live="polite">
             {active ? (
-              <div className="animate-fade-in">
+              <div key={active.id} className="animate-fade-in">
                 <p className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
                   {active.country} · {active.years}
                 </p>
@@ -131,14 +133,14 @@ const FieldMap = () => {
                   {active.summary}
                 </p>
                 {active.kind !== "home" && (
-                  <div className="mt-5 grid gap-px bg-border sm:grid-cols-2">
+                  <div className="mt-6 border-t border-border">
                     {active.engagements.map((e) => {
                       const project = getProjectById(e.to.split("/").pop() ?? "");
                       return (
                         <Link
                           key={e.to + e.focus}
                           to={e.to}
-                          className="group flex items-start justify-between gap-4 bg-background p-4 hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary transition-colors"
+                          className="group flex items-start justify-between gap-4 border-b border-border py-4 hover:bg-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary transition-colors"
                         >
                           <div>
                             <p className="text-sm font-medium group-hover:opacity-70 transition-opacity">
@@ -156,9 +158,17 @@ const FieldMap = () => {
                 )}
               </div>
             ) : (
-              <p className="text-sm text-muted-foreground">
-                Select a location to see the engagements based there.
-              </p>
+              <div className="animate-fade-in">
+                <p className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">Global practice</p>
+                <h3 className="mt-3 text-xl md:text-2xl font-serif">Across contexts, grounded in place.</h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">Institutional capacity building and curriculum development across five countries, spanning education, workforce, and sector partnerships.</p>
+                <div className="mt-8 border-t border-border pt-4 flex justify-between text-sm">
+                  <span>Project locations</span><span className="font-serif text-xl">06</span>
+                </div>
+                <div className="mt-3 border-t border-border pt-4 flex justify-between text-sm">
+                  <span>Engagements</span><span className="font-serif text-xl">11</span>
+                </div>
+              </div>
             )}
           </div>
         </div>

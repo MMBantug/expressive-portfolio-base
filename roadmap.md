@@ -1,2 +1,3 @@
 - [x] Make map project links reliably open the same project pages as Work cards.
 - [x] Add a Toronto home-base pin without presenting it as a project.
+- [ ] Show map location details in an adjacent panel that updates on hover or tap and keeps project links accessible.
