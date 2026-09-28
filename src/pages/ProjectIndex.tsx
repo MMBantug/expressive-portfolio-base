@@ -38,12 +38,11 @@ const ProjectIndex = () => {
 
   return (
     <>
+      <Navbar 
+        selectedCategory={selectedCategory}
+        onCategoryChange={setSelectedCategory}
+      />
       <main className="min-h-screen bg-background page-transition">
-        <Navbar 
-          selectedCategory={selectedCategory}
-          onCategoryChange={setSelectedCategory}
-        />
-        
         {/* Field map */}
         <FieldMap />
 

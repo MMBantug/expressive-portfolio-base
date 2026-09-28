@@ -11,6 +11,16 @@ import worldData from "world-atlas/countries-110m.json";
 import { mapLocations, type MapLocation } from "@/data/fieldMap";
 import { getProjectById } from "@/data/projects";
 
+// Unique country flags for the project locations (home base excluded).
+const countryFlags = mapLocations
+  .filter((l) => l.kind !== "home")
+  .reduce<{ code: string; country: string }[]>((acc, l) => {
+    if (!acc.some((c) => c.code === l.countryCode)) {
+      acc.push({ code: l.countryCode, country: l.country });
+    }
+    return acc;
+  }, []);
+
 const FieldMap = () => {
   const [active, setActive] = useState<MapLocation | null>(null);
   const detailsRef = useRef<HTMLDivElement>(null);
@@ -169,6 +179,18 @@ const FieldMap = () => {
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">Institutional capacity building and curriculum development across five countries, spanning education, workforce, and sector partnerships.</p>
                 <div className="mt-8 border-t border-border pt-4 flex justify-between text-sm">
                   <span>Project locations</span><span className="font-serif text-xl">06</span>
+                </div>
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  {countryFlags.map((c) => (
+                    <img
+                      key={c.code}
+                      src={`https://flagcdn.com/w80/${c.code}.png`}
+                      alt={`Flag of ${c.country}`}
+                      title={c.country}
+                      loading="lazy"
+                      className="h-7 w-7 rounded-full object-cover ring-1 ring-border shadow-sm"
+                    />
+                  ))}
                 </div>
                 <div className="mt-3 border-t border-border pt-4 flex justify-between text-sm">
                   <span>Engagements</span><span className="font-serif text-xl">11</span>
