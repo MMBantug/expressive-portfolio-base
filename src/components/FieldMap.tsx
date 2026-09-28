@@ -85,7 +85,8 @@ const FieldMap = () => {
                     />
                     <text
                       textAnchor="middle"
-                      y={-13}
+                      x={loc.labelOffset?.dx ?? 0}
+                      y={loc.labelOffset?.dy ?? -13}
                       className="fill-foreground"
                       style={{
                         fontSize: 9,
