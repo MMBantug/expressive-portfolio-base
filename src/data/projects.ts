@@ -122,7 +122,7 @@ export const projects: Project[] = [ {
     overview:
       "KEFEP06 — the Kenya Education for Employment Program — included a thematic partnership on leadership and management that ran from 2017 to 2020. Working with every national polytechnic in Kenya, we trained the people who hold institutions together: heads of departments, deputy principals, and principals. The partnership was anchored by two national institutions — the Kenya Technical Trainers College, now the Kenya School of TVET, and KATTI, the Kenya Association of Technical Training Institutes — so the training was grounded in the system it was meant to strengthen.",
     images: [
-      "/KE_Forum.jpg",
+      "/KE_HOD training.JPG",
       u("photo-1524178232363-1fb2b075b655"),
       u("photo-1571260899304-425eee4c7efc"),
       u("photo-1541339907198-e08756dedf3f"),
