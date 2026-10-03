@@ -108,6 +108,85 @@ export const projects: Project[] = [ {
     relatedIds: ["skills-next-economy", "rural-pathways", "blueprint-to-bootcamp"],
   },
   {
+    id: "kefep06-kenya",
+    title: "Leadership & Management for Kenya's Polytechnics",
+    tags: ["leadership development", "capacity building", "education & skills"],
+    type: "Thematic Partnership & Leadership Development",
+    location: "Nairobi, Kenya",
+    year: "2017–2020",
+    timeframe: "3 years",
+    client: "Thematic partnership — Kenya Technical Trainers College (now Kenya School of TVET) & KATTI",
+    focusArea: "Leadership & Management",
+    summary:
+      "KEFEP06 — Kenya Education for Employment Program. A three-year thematic partnership building leadership and management capacity across all of Kenya's national polytechnics, training HODs, Deputy Principals, and Principals.",
+    overview:
+      "KEFEP06 — the Kenya Education for Employment Program — included a thematic partnership on leadership and management that ran from 2017 to 2020. Working with every national polytechnic in Kenya, we trained the people who hold institutions together: heads of departments, deputy principals, and principals. The partnership was anchored by two national institutions — the Kenya Technical Trainers College, now the Kenya School of TVET, and KATTI, the Kenya Association of Technical Training Institutes — so the training was grounded in the system it was meant to strengthen.",
+    images: [
+      u("photo-1509062522246-3755977927d7"),
+      u("photo-1524178232363-1fb2b075b655"),
+      u("photo-1571260899304-425eee4c7efc"),
+      u("photo-1541339907198-e08756dedf3f"),
+    ],
+    color: "#D97706",
+    aspectRatio: "landscape",
+    expertise: [
+      "Leadership Development",
+      "Institutional Capacity Building",
+      "Workshop Facilitation",
+      "Partnership Development",
+      "Training Design & Delivery",
+      "Stakeholder Engagement",
+    ],
+    opportunity:
+      "Kenya's national polytechnics were led by people promoted for their technical excellence — master trainers and subject specialists who woke up one day responsible for budgets, staff, and institutional strategy, often without structured preparation for the shift. Leadership in a polytechnic is not a personal skill; it is a system constraint. If heads of departments, deputy principals, and principals managed by instinct alone, every reform flowing down from the national level lost coherence on the way through the institution.",
+    approach:
+      "The partnership worked through the system's own institutions rather than around them. Kenya Technical Trainers College — now the Kenya School of TVET — anchored the training content and delivery, while KATTI connected the program to the association network that represents technical training institutes nationwide. That architecture mattered: training leaders through their own national institutions built credibility that an external provider could never carry, and it positioned the content to outlive the program.",
+    work: [
+      "Delivered a three-year thematic partnership on leadership and management under KEFEP06 (2017–2020)",
+      "Reached all of Kenya's national polytechnics through structured leadership and management training",
+      "Trained heads of departments, deputy principals, and principals across the polytechnic system",
+      "Worked in partnership with Kenya Technical Trainers College (now Kenya School of TVET) as the national training anchor",
+      "Engaged KATTI to connect the training to the nationwide network of technical training institutes",
+      "Adapted the curriculum to the realities of TVET institution management in the Kenyan context",
+    ],
+    results: [
+      { value: "XX", label: "institutional leaders trained — HODs, Deputy Principals & Principals" },
+      { value: "All", label: "national polytechnics in Kenya reached" },
+      { value: "2", label: "national partner institutions anchoring the training" },
+      { value: "3 yrs", label: "thematic partnership, 2017–2020" },
+    ],
+    voices: [
+      {
+        quote:
+          "We were promoted into leadership without ever being trained for it. This gave us the language and the tools.",
+        name: "Training participant",
+        role: "Head of Department, national polytechnic",
+      },
+      {
+        quote:
+          "Working through our own institutions made the training ours — not something done to us.",
+        name: "Institutional partner",
+        role: "National TVET partner institution",
+      },
+    ],
+    fieldNote: {
+      quote: "The people who run the institutions are the reform.",
+      reflection:
+        "Across three years of working with heads of departments, deputy principals, and principals, the lesson repeated itself: national reforms succeed or stall inside institutions, at the level of the people who lead them. Training those leaders through their own national institutions was not a delivery shortcut — it was the sustainability strategy.",
+    },
+    lessons: [
+      "Leadership training lands best when it is delivered through the institutions leaders already trust.",
+      "A thematic partnership aligned with national institutions outlasts any single funded project.",
+      "Institutional capacity is built at the level where decisions are made: departments, deputy offices, the principal's office.",
+    ],
+    whyItMatters: [
+      "TVET systems are only as strong as the leadership running their institutions.",
+      "Investing in HODs, deputy principals, and principals multiplies every other investment in the system.",
+      "Partnerships anchored in national institutions turn training into permanent capability.",
+    ],
+    relatedIds: ["convening-the-unconvened", "classrooms-without-borders", "esp05-tanzania"],
+  },
+  {
     id: "building-bridges-bogota",
     title: "Building Bridges in Bogotá",
     tags: ["partnership development", "stakeholder engagement", "international collaboration"],
