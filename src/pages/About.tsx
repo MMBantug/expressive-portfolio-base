@@ -111,7 +111,7 @@ const credentials = [
 ];
 
 const socialLinks = [
-  { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/marybantug/" },
   { name: "Instagram", icon: Instagram, url: "https://instagram.com" },
 ];
 
