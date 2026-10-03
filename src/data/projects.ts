@@ -129,7 +129,7 @@ export const projects: Project[] = [ {
       "/KE_HOD training.JPG",
       "/KE_NairobiTTI.JPG",
       "/KE_Eldoret.jpeg",
-      u("photo-1541339907198-e08756dedf3f"),
+      "/KE_Forum.jpg",
     ],
     color: "#D97706",
     aspectRatio: "landscape",
