@@ -79,6 +79,14 @@ const ProjectIndex = () => {
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
+                  {project.countryCode && (
+                    <img
+                      src={`https://flagcdn.com/w80/${project.countryCode}.png`}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute top-2.5 left-2.5 z-10 h-7 w-7 rounded-full object-cover ring-1 ring-background/60 shadow-md"
+                    />
+                  )}
                 </div>
 
                 <div className="pt-2 pb-3">
@@ -113,6 +121,14 @@ const ProjectIndex = () => {
                     className="w-full h-auto object-cover"
                     loading="lazy"
                   />
+                  {project.countryCode && (
+                    <img
+                      src={`https://flagcdn.com/w80/${project.countryCode}.png`}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute top-3.5 left-3.5 z-10 h-8 w-8 rounded-full object-cover ring-1 ring-background/60 shadow-md"
+                    />
+                  )}
                 </div>
 
                 <div className="pt-3 pb-4">

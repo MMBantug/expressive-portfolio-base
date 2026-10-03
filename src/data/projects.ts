@@ -4,6 +4,8 @@ export interface Project {
   tags: string[];
   type: string;
   location: string;
+  /** ISO 3166-1 alpha-2 code (lowercase) — shows a round flag stamp on homepage cards. */
+  countryCode?: string;
   year: string;
   timeframe: string;
   client?: string;
@@ -34,6 +36,7 @@ export const projects: Project[] = [ {
     tags: ["women's empowerment", "workforce development", "program management"],
     type: "TECHNICAL COOPERATION & WORKFORCE DEVELOPMENT",
     location: "Morogoro & Dodoma Regions, Tanzania",
+    countryCode: "tz",
     year: "2022–2026",
     timeframe: "4 years",
     client: "Colleges and Institutes Canada",
@@ -113,6 +116,7 @@ export const projects: Project[] = [ {
     tags: ["leadership development", "capacity building", "education & skills"],
     type: "Thematic Partnership & Leadership Development",
     location: "Nairobi, Kenya",
+    countryCode: "ke",
     year: "2017–2020",
     timeframe: "3 years",
     client: "Thematic partnership — Kenya Technical Trainers College (now Kenya School of TVET) & KATTI",
