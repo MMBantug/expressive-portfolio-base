@@ -2,3 +2,4 @@
 - [x] Add a Toronto home-base pin without presenting it as a project.
 - [x] Show map location details in an adjacent panel that updates on hover or tap and keeps project links accessible.- [x] Show round country flags under Project locations on the map panel.
 - [x] Keep the top name/category bar fixed while scrolling.
+- [x] Add the KEFEP06 Kenya case study and point the Nairobi pin's Leadership & Management engagement to it.

@@ -44,10 +44,10 @@ export const mapLocations: MapLocation[] = [
     summary: "National institutions, labour market systems and leadership development.",
     engagements: [
       {
-        title: "Classrooms Without Borders",
+        title: "Kenya Education for Employment Program (KEFEP06)",
         years: "2017–2020",
         focus: "Leadership & Management",
-        to: "/project/classrooms-without-borders",
+        to: "/project/kefep06-kenya",
       },
       {
         title: "Building Bridges",
