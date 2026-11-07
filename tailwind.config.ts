@@ -22,7 +22,7 @@ export default {
         "3xl": "1920px",
       },
       fontFamily: {
-        serif: ["Cormorant Garamond", "Georgia", "serif"],
+        serif: ["Lora", "Georgia", "serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       fontSize: {
@@ -31,6 +31,8 @@ export default {
         "subheadline": ["clamp(1.25rem, 2vw, 1.75rem)", { lineHeight: "1.4" }],
       },
       colors: {
+        "secondary-accent": "hsl(var(--secondary-accent))",
+        placeholder: { DEFAULT: "hsl(var(--placeholder))", foreground: "hsl(var(--placeholder-foreground))" },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

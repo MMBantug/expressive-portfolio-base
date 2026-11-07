@@ -13,26 +13,29 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 5%;
-    --card: 0 0% 100%;
+    --background: 40 30% 97%;
+    --foreground: 200 25% 14%;
+    --card: 40 25% 94%;
     --card-foreground: 0 0% 5%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 5%;
-    --primary: 0 0% 5%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 190 55% 22%;
+    --primary-foreground: 40 30% 97%;
     --secondary: 0 0% 96%;
     --secondary-foreground: 0 0% 5%;
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 40 18% 90%;
+    --muted-foreground: 200 12% 34%;
     --accent: 0 0% 96%;
     --accent-foreground: 0 0% 5%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 90%;
+    --border: 40 15% 85%;
     --input: 0 0% 90%;
-    --ring: 0 0% 5%;
-    --radius: 0rem;
+    --ring: 190 55% 22%;
+    --radius: 0.75rem;
+    --secondary-accent: 16 50% 40%;
+    --placeholder: 38 90% 90%;
+    --placeholder-foreground: 28 70% 28%;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -78,6 +81,15 @@
 }
 
 @layer components {
+  .focus-ring { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background; }
+  .btn-primary { @apply focus-ring inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-medium text-primary-foreground transition-opacity hover:opacity-90; }
+  .btn-outline { @apply focus-ring inline-flex items-center gap-2 rounded-full border border-primary px-6 py-3 font-medium text-primary transition-colors hover:bg-primary/5; }
+  .btn-light { @apply inline-flex items-center gap-2 rounded-full bg-primary-foreground px-6 py-3 font-medium text-primary transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-primary; }
+  .placeholder-text { @apply rounded bg-placeholder px-1 text-placeholder-foreground underline decoration-dotted underline-offset-4; }
+  .story-h { @apply mb-2 font-serif text-xl text-primary; }
+  .fade-in { animation: fadeIn 0.7s ease-out both; }
+  @media (prefers-reduced-motion: reduce) { .fade-in { animation: none; } html { scroll-behavior: auto !important; } }
+
   .project-card {
     @apply block overflow-hidden;
   }
@@ -148,3 +160,5 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground) / 0.5);
 }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+body { font-size: 1.0625rem; }
