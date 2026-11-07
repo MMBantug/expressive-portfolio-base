@@ -1,5 +1,5 @@
 import { useState, Fragment, type ReactNode } from "react";
-import { Ear, Users, BarChart3, Heart, Menu, X, Mail, Linkedin, MessageSquare, ArrowUpRight } from "lucide-react";
+import { Ear, Users, BarChart3, Heart, Menu, X, Linkedin, MessageSquare, ArrowUpRight } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import ContactDrawer from "@/components/ContactDrawer";
 import {
@@ -212,7 +212,6 @@ const Home = () => {
             <h2 className="font-serif text-4xl md:text-5xl">Let's talk.</h2>
             <p className="mt-4 max-w-xl text-lg opacity-90">Open to conversations about partnerships, program leadership, and international education.</p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <a href={`mailto:${profile.email}`} className="btn-light"><Mail className="h-4 w-4" aria-hidden /> Email</a>
               <a href={profile.linkedin} target="_blank" rel="noreferrer" className="btn-light"><Linkedin className="h-4 w-4" aria-hidden /> LinkedIn</a>
               <button onClick={() => setContactOpen(true)} className="btn-light">
                 <MessageSquare className="h-4 w-4" aria-hidden /> Contact form

@@ -21,7 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const CONTACT_EMAIL = "hello@marybantug.com";
+const CONTACT_EMAIL = "mary.mikelle@gmail.com";
 
 const focusAreas = [
   "TVET & Curriculum Reform",
