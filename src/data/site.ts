@@ -1,5 +1,8 @@
 // All editable site content lives here. Text in [square brackets] shows as a visible placeholder.
 
+import torontoExchangeImage from "@/assets/toronto-learning-exchange.jpg.asset.json";
+import kiliHubImage from "@/assets/kilimanjaro-kili-hub.jpg.asset.json";
+
 export const profile = {
   name: "Mary Bantug",
   headline:
@@ -111,8 +114,8 @@ export const caseStudies: CaseStudy[] = [
     summary: "A two-week exchange so partners could see college operations first-hand and take ideas home.",
     keyNumber: "7",
     keyLabel: "service areas",
-    image: "/TZ_Approach.jpeg",
-    imageAlt: "Tanzanian and Canadian education partners together",
+    image: torontoExchangeImage.url,
+    imageAlt: "Toronto skyline at sunset with the CN Tower", 
     context:
       "Partnerships are strongest when learning flows both ways. After working with Tanzanian colleges remotely and in-country, we organized a two-week learning exchange in Canada so partners could see college operations first-hand and take ideas home.",
     role: "I managed the exchange end to end, coordinating the parts of our institution involved, and authored articles to document and share what we learned.",
@@ -136,6 +139,8 @@ export const caseStudies: CaseStudy[] = [
     summary: "Day-to-day leadership of a co-working hub where NGOs and entrepreneurs worked side by side.",
     keyNumber: "10+",
     keyLabel: "NGOs",
+    image: kiliHubImage.url,
+    imageAlt: "Giraffe standing in front of Mount Kilimanjaro in Tanzania",
     context:
       "Small organizations working in the same region often face the same challenges in isolation. Kili Hub, a co-working space run by the social enterprise Anza International, gave NGOs and entrepreneurs a place to work side by side and collaborate.",
     role: "As Community and Operations Manager, I ran the hub day to day, led programming, coached a small team, and set strategic direction.",
