@@ -1,5 +1,5 @@
 import { useState, Fragment, type ReactNode } from "react";
-import { Ear, Users, BarChart3, Heart, Menu, X, Mail, Linkedin, MessageSquare, ArrowUpRight } from "lucide-react";
+import { Ear, Users, BarChart3, Heart, Menu, X, Linkedin, MessageSquare, ArrowUpRight } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import ContactDrawer from "@/components/ContactDrawer";
 import {
