@@ -1,0 +1,291 @@
+import { useState, Fragment, type ReactNode } from "react";
+import { Ear, Users, BarChart3, Heart, Menu, X, Mail, Linkedin, FileText, ArrowUpRight } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import {
+  profile, nav, impact, fundersNote, countries, caseStudies, principles, writing, about, testimonials,
+  type CaseStudy,
+} from "@/data/site";
+
+/** Renders [bracketed] text as a visible, editable placeholder. */
+const T = ({ children }: { children: string }) => {
+  const parts = children.split(/(\[[^\]]+\])/g);
+  return (
+    <>
+      {parts.map((p, i) =>
+        p.startsWith("[") ? (
+          <span key={i} className="placeholder-text">{p}</span>
+        ) : (
+          <Fragment key={i}>{p}</Fragment>
+        ),
+      )}
+    </>
+  );
+};
+
+const icons = { ear: Ear, users: Users, chart: BarChart3, heart: Heart };
+
+const scrollTo = (id: string) => {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.getElementById(id)?.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
+};
+
+const Section = ({ id, eyebrow, title, children }: { id: string; eyebrow: string; title: string; children: ReactNode }) => (
+  <section id={id} className="scroll-mt-20 py-20 md:py-28 fade-in">
+    <div className="mx-auto max-w-6xl px-5 md:px-8">
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary-accent">{eyebrow}</p>
+      <h2 className="mt-3 font-serif text-3xl md:text-4xl text-primary">{title}</h2>
+      <div className="mt-10">{children}</div>
+    </div>
+  </section>
+);
+
+const ResumeButton = ({ variant = "outline" }: { variant?: "outline" | "solid" }) => {
+  const cls = variant === "solid" ? "btn-primary" : "btn-outline";
+  return profile.resume ? (
+    <a href={profile.resume} className={cls} target="_blank" rel="noreferrer">
+      <FileText className="h-4 w-4" aria-hidden /> Download résumé
+    </a>
+  ) : (
+    <span className={`${cls} cursor-not-allowed opacity-70`} aria-disabled="true" title="Résumé link coming soon">
+      <FileText className="h-4 w-4" aria-hidden /> Download résumé <span className="placeholder-text">[link]</span>
+    </span>
+  );
+};
+
+const Home = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [open, setOpen] = useState<CaseStudy | null>(null);
+
+  const go = (id: string) => { setMenuOpen(false); scrollTo(id); };
+
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] btn-primary">Skip to content</a>
+
+      {/* NAV */}
+      <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="font-serif text-xl text-primary focus-ring rounded">
+            {profile.name}
+          </button>
+          <nav aria-label="Main" className="hidden md:block">
+            <ul className="flex gap-8">
+              {nav.map((n) => (
+                <li key={n.id}>
+                  <a href={`#${n.id}`} onClick={(e) => { e.preventDefault(); go(n.id); }}
+                    className="text-[15px] text-foreground/80 hover:text-primary focus-ring rounded">{n.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <button className="md:hidden focus-ring rounded p-2" aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen} onClick={() => setMenuOpen((v) => !v)}>
+            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+        {menuOpen && (
+          <nav aria-label="Mobile" className="md:hidden border-t border-border bg-background">
+            <ul className="px-5 py-3">
+              {nav.map((n) => (
+                <li key={n.id}>
+                  <a href={`#${n.id}`} onClick={(e) => { e.preventDefault(); go(n.id); }}
+                    className="block py-3 text-lg focus-ring rounded">{n.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </header>
+
+      <main id="main">
+        {/* HERO */}
+        <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-16 md:grid-cols-[1.4fr_1fr] md:px-8 md:pt-24 fade-in">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary-accent">{profile.name} · {profile.location}</p>
+            <h1 className="mt-5 font-serif text-4xl leading-tight text-primary md:text-5xl lg:text-[3.4rem]">{profile.headline}</h1>
+            <p className="mt-6 text-lg text-muted-foreground md:text-xl">{profile.subline}</p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <button className="btn-primary" onClick={() => scrollTo("contact")}>Get in touch</button>
+              <ResumeButton />
+            </div>
+          </div>
+          <div className="aspect-[4/5] w-full max-w-sm justify-self-center rounded-2xl border border-dashed border-secondary-accent/50 bg-muted flex items-center justify-center" role="img" aria-label="Professional photo placeholder">
+            <span className="placeholder-text">[Professional photo]</span>
+          </div>
+        </section>
+
+        {/* IMPACT */}
+        <section aria-label="Impact" className="border-y border-border bg-card">
+          <div className="mx-auto max-w-6xl px-5 py-12 md:px-8">
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {impact.map((s) => (
+                <li key={s.label} className="rounded-xl bg-background p-6">
+                  <p className="font-serif text-4xl text-primary">{s.value}</p>
+                  <p className="mt-2 text-base text-muted-foreground">{s.label}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-sm text-muted-foreground"><T>{fundersNote}</T></p>
+          </div>
+        </section>
+
+        {/* WHERE I WORK */}
+        <Section id="where" eyebrow="Where I work" title="Two continents, five countries">
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {countries.map((c) => (
+              <li key={c.name} className="rounded-xl border border-border bg-card p-5">
+                <img src={`https://flagcdn.com/w80/${c.code}.png`} alt="" aria-hidden width={32} height={32}
+                  className="h-8 w-8 rounded-full object-cover ring-1 ring-border" loading="lazy" />
+                <p className="mt-4 font-serif text-xl text-primary">{c.name}</p>
+                <p className="mt-1 text-sm text-muted-foreground"><T>{c.line}</T></p>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        {/* CASE STUDIES */}
+        <Section id="work" eyebrow="Work" title="Selected case studies">
+          <ul className="grid gap-6 md:grid-cols-2">
+            {caseStudies.map((cs) => (
+              <li key={cs.id}>
+                <button onClick={() => setOpen(cs)}
+                  className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-card text-left transition-shadow hover:shadow-lg focus-ring">
+                  {cs.image ? (
+                    <img src={cs.image} alt={cs.imageAlt} loading="lazy" className="aspect-[16/9] w-full object-cover" />
+                  ) : (
+                    <div className="aspect-[16/9] w-full bg-muted flex items-center justify-center"><span className="placeholder-text">[Photo]</span></div>
+                  )}
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="text-sm text-secondary-accent"><T>{cs.tag}</T></p>
+                    <h3 className="mt-2 font-serif text-2xl text-primary">{cs.title}</h3>
+                    <p className="mt-3 text-base text-muted-foreground">{cs.summary}</p>
+                    <div className="mt-auto flex items-end justify-between pt-6">
+                      <p><span className="font-serif text-3xl text-primary">{cs.keyNumber}</span> <span className="text-muted-foreground">{cs.keyLabel}</span></p>
+                      <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">Read story <ArrowUpRight className="h-4 w-4" aria-hidden /></span>
+                    </div>
+                  </div>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        {/* HOW I WORK */}
+        <div className="bg-card border-y border-border">
+          <Section id="how-i-work" eyebrow="How I work" title="Principles behind every program">
+            <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              {principles.map((p) => {
+                const Icon = icons[p.icon];
+                return (
+                  <li key={p.title}>
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 text-primary"><Icon className="h-5 w-5" aria-hidden /></span>
+                    <h3 className="mt-4 font-serif text-xl text-primary">{p.title}</h3>
+                    <p className="mt-2 text-base text-muted-foreground">{p.text}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </Section>
+        </div>
+
+        {/* WRITING */}
+        <Section id="writing" eyebrow="Writing" title="Articles and reflections">
+          <ul className="divide-y divide-border border-y border-border">
+            {writing.map((w, i) => (
+              <li key={i} className="flex flex-col gap-1 py-5 sm:flex-row sm:items-center sm:justify-between">
+                <p className="font-serif text-xl text-primary"><T>{w.title}</T></p>
+                <p className="text-muted-foreground">
+                  <T>{w.publication}</T> ·{" "}
+                  {w.link ? <a className="underline focus-ring rounded" href={w.link} target="_blank" rel="noreferrer">Read</a> : <span className="placeholder-text">[Link]</span>}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        {/* ABOUT */}
+        <div className="bg-card border-y border-border">
+          <Section id="about" eyebrow="About" title="A little about me">
+            <div className="grid gap-12 md:grid-cols-[1fr_1.6fr]">
+              <div className="aspect-square w-full max-w-xs rounded-2xl border border-dashed border-secondary-accent/50 bg-muted flex items-center justify-center" role="img" aria-label="Photo placeholder">
+                <span className="placeholder-text">[Photo]</span>
+              </div>
+              <div>
+                <p className="text-lg leading-relaxed"><T>{about.story}</T></p>
+                <div className="mt-10 grid gap-10 sm:grid-cols-2">
+                  <div>
+                    <h3 className="font-serif text-xl text-primary">Education</h3>
+                    <ul className="mt-4 space-y-4">
+                      {about.education.map((e) => (
+                        <li key={e.school}><p className="font-medium">{e.school}</p><p className="text-muted-foreground">{e.credential}</p></li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-xl text-primary">Areas of focus</h3>
+                    <ul className="mt-4 space-y-2">
+                      {about.focus.map((f) => <li key={f} className="text-muted-foreground">— {f}</li>)}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Section>
+        </div>
+
+        {/* TESTIMONIALS */}
+        <Section id="testimonials" eyebrow="Kind words" title="From partners and colleagues">
+          <ul className="grid gap-6 md:grid-cols-3">
+            {testimonials.map((t, i) => (
+              <li key={i} className="rounded-2xl border border-border bg-card p-6">
+                <blockquote className="font-serif text-xl text-primary">“<T>{t.quote}</T>”</blockquote>
+                <p className="mt-4 text-sm text-muted-foreground">— <T>{t.by}</T></p>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        {/* CONTACT */}
+        <section id="contact" className="scroll-mt-20 bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
+            <h2 className="font-serif text-4xl md:text-5xl">Let's talk.</h2>
+            <p className="mt-4 max-w-xl text-lg opacity-90">Open to conversations about partnerships, program leadership, and international education.</p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <a href={`mailto:${profile.email}`} className="btn-light"><Mail className="h-4 w-4" aria-hidden /> Email</a>
+              <a href={profile.linkedin} target="_blank" rel="noreferrer" className="btn-light"><Linkedin className="h-4 w-4" aria-hidden /> LinkedIn</a>
+              {profile.resume
+                ? <a href={profile.resume} className="btn-light" target="_blank" rel="noreferrer"><FileText className="h-4 w-4" aria-hidden /> Download résumé</a>
+                : <span className="btn-light opacity-70" aria-disabled="true"><FileText className="h-4 w-4" aria-hidden /> Download résumé [link]</span>}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-border py-8 text-center text-sm text-muted-foreground">© 2026 {profile.name}</footer>
+
+      <Dialog open={!!open} onOpenChange={(v) => !v && setOpen(null)}>
+        <DialogContent className="max-h-[90vh] max-w-2xl overflow-y-auto bg-background">
+          {open && (
+            <>
+              <DialogHeader>
+                <p className="text-sm text-secondary-accent"><T>{open.tag}</T></p>
+                <DialogTitle className="font-serif text-3xl font-normal text-primary">{open.title}</DialogTitle>
+                <DialogDescription className="text-base">{open.summary}</DialogDescription>
+              </DialogHeader>
+              {open.image && <img src={open.image} alt={open.imageAlt} className="mt-2 aspect-[16/9] w-full rounded-xl object-cover" />}
+              <div className="space-y-7 text-base leading-relaxed">
+                <div><h3 className="story-h">Context</h3><p><T>{open.context}</T></p></div>
+                <div><h3 className="story-h">My Role</h3><p><T>{open.role}</T></p></div>
+                <div><h3 className="story-h">Approach</h3><ul className="list-disc space-y-2 pl-5">{open.approach.map((a, i) => <li key={i}><T>{a}</T></li>)}</ul></div>
+                <div><h3 className="story-h">Outcomes</h3><ul className="list-disc space-y-2 pl-5">{open.outcomes.map((a, i) => <li key={i}><T>{a}</T></li>)}</ul></div>
+                <div><h3 className="story-h">What I Learned</h3><p><T>{open.learned}</T></p></div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+};
+
+export default Home;
