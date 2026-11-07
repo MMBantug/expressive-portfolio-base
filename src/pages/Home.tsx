@@ -1,8 +1,9 @@
 import { useState, Fragment, type ReactNode } from "react";
-import { Ear, Users, BarChart3, Heart, Menu, X, Mail, Linkedin, FileText, ArrowUpRight } from "lucide-react";
+import { Ear, Users, BarChart3, Heart, Menu, X, Mail, Linkedin, MessageSquare, ArrowUpRight } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import ContactDrawer from "@/components/ContactDrawer";
 import {
-  profile, nav, impact, fundersNote, countries, caseStudies, principles, writing, about, testimonials,
+  profile, nav, impact, fundersNote, countries, caseStudies, principles, about,
   type CaseStudy,
 } from "@/data/site";
 
@@ -39,22 +40,10 @@ const Section = ({ id, eyebrow, title, children }: { id: string; eyebrow: string
   </section>
 );
 
-const ResumeButton = ({ variant = "outline" }: { variant?: "outline" | "solid" }) => {
-  const cls = variant === "solid" ? "btn-primary" : "btn-outline";
-  return profile.resume ? (
-    <a href={profile.resume} className={cls} target="_blank" rel="noreferrer">
-      <FileText className="h-4 w-4" aria-hidden /> Download résumé
-    </a>
-  ) : (
-    <span className={`${cls} cursor-not-allowed opacity-70`} aria-disabled="true" title="Résumé link coming soon">
-      <FileText className="h-4 w-4" aria-hidden /> Download résumé <span className="placeholder-text">[link]</span>
-    </span>
-  );
-};
-
 const Home = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [open, setOpen] = useState<CaseStudy | null>(null);
+  const [contactOpen, setContactOpen] = useState(false);
 
   const go = (id: string) => { setMenuOpen(false); scrollTo(id); };
 
@@ -105,8 +94,7 @@ const Home = () => {
             <h1 className="mt-5 font-serif text-4xl leading-tight text-primary md:text-5xl lg:text-[3.4rem]">{profile.headline}</h1>
             <p className="mt-6 text-lg text-muted-foreground md:text-xl">{profile.subline}</p>
             <div className="mt-9 flex flex-wrap gap-4">
-              <button className="btn-primary" onClick={() => scrollTo("contact")}>Get in touch</button>
-              <ResumeButton />
+              <button className="btn-primary" onClick={() => setContactOpen(true)}>Get in touch</button>
             </div>
           </div>
           <div className="aspect-[4/5] w-full max-w-sm justify-self-center rounded-2xl border border-dashed border-secondary-accent/50 bg-muted flex items-center justify-center" role="img" aria-label="Professional photo placeholder">
@@ -188,21 +176,6 @@ const Home = () => {
           </Section>
         </div>
 
-        {/* WRITING */}
-        <Section id="writing" eyebrow="Writing" title="Articles and reflections">
-          <ul className="divide-y divide-border border-y border-border">
-            {writing.map((w, i) => (
-              <li key={i} className="flex flex-col gap-1 py-5 sm:flex-row sm:items-center sm:justify-between">
-                <p className="font-serif text-xl text-primary"><T>{w.title}</T></p>
-                <p className="text-muted-foreground">
-                  <T>{w.publication}</T> ·{" "}
-                  {w.link ? <a className="underline focus-ring rounded" href={w.link} target="_blank" rel="noreferrer">Read</a> : <span className="placeholder-text">[Link]</span>}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </Section>
-
         {/* ABOUT */}
         <div className="bg-card border-y border-border">
           <Section id="about" eyebrow="About" title="A little about me">
@@ -233,18 +206,6 @@ const Home = () => {
           </Section>
         </div>
 
-        {/* TESTIMONIALS */}
-        <Section id="testimonials" eyebrow="Kind words" title="From partners and colleagues">
-          <ul className="grid gap-6 md:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <li key={i} className="rounded-2xl border border-border bg-card p-6">
-                <blockquote className="font-serif text-xl text-primary">“<T>{t.quote}</T>”</blockquote>
-                <p className="mt-4 text-sm text-muted-foreground">— <T>{t.by}</T></p>
-              </li>
-            ))}
-          </ul>
-        </Section>
-
         {/* CONTACT */}
         <section id="contact" className="scroll-mt-20 bg-primary text-primary-foreground">
           <div className="mx-auto max-w-6xl px-5 py-20 md:px-8 md:py-28">
@@ -253,9 +214,9 @@ const Home = () => {
             <div className="mt-9 flex flex-wrap gap-4">
               <a href={`mailto:${profile.email}`} className="btn-light"><Mail className="h-4 w-4" aria-hidden /> Email</a>
               <a href={profile.linkedin} target="_blank" rel="noreferrer" className="btn-light"><Linkedin className="h-4 w-4" aria-hidden /> LinkedIn</a>
-              {profile.resume
-                ? <a href={profile.resume} className="btn-light" target="_blank" rel="noreferrer"><FileText className="h-4 w-4" aria-hidden /> Download résumé</a>
-                : <span className="btn-light opacity-70" aria-disabled="true"><FileText className="h-4 w-4" aria-hidden /> Download résumé [link]</span>}
+              <button onClick={() => setContactOpen(true)} className="btn-light">
+                <MessageSquare className="h-4 w-4" aria-hidden /> Contact form
+              </button>
             </div>
           </div>
         </section>
@@ -284,6 +245,8 @@ const Home = () => {
           )}
         </DialogContent>
       </Dialog>
+
+      <ContactDrawer open={contactOpen} onOpenChange={setContactOpen} />
     </div>
   );
 };
