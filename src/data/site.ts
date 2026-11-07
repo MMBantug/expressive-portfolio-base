@@ -14,7 +14,6 @@ export const profile = {
 export const nav = [
   { id: "work", label: "Work" },
   { id: "how-i-work", label: "How I Work" },
-  { id: "writing", label: "Writing" },
   { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];
@@ -162,12 +161,6 @@ export const principles = [
   { icon: "heart", title: "Inclusion by design", text: "Gender equality and social inclusion built in from the start." },
 ] as const;
 
-export const writing = [
-  { title: "[Article title]", publication: "[Publication]", link: "" },
-  { title: "[Article title]", publication: "[Publication]", link: "" },
-  { title: "[Article title]", publication: "[Publication]", link: "" },
-];
-
 export const about = {
   story:
     "[Write a warm, personal story: peacebuilding background, early work in Tanzania, a decade of program management.]",
@@ -184,9 +177,3 @@ export const about = {
     "Resource Mobilization and Proposal Development",
   ],
 };
-
-export const testimonials = [
-  { quote: "[Quote]", by: "[Name or role, e.g., Faculty partner, Tanzania]" },
-  { quote: "[Quote]", by: "[Name or role]" },
-  { quote: "[Quote]", by: "[Name or role]" },
-];
