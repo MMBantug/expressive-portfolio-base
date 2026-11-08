@@ -187,24 +187,24 @@ const Home = () => {
                 <div className="aspect-square w-full max-w-xs rounded-2xl border border-dashed border-secondary-accent/50 bg-muted flex items-center justify-center" role="img" aria-label="Photo placeholder">
                   <span className="placeholder-text">[Photo]</span>
                 </div>
-                <div className="mt-10 space-y-10">
-                  <div>
-                    <h3 className="font-serif text-xl text-primary">Education</h3>
-                    <ul className="mt-4 space-y-4">
-                      {about.education.map((e) => (
-                        <li key={e.school}><p className="font-medium">{e.school}</p><p className="text-muted-foreground">{e.credential}</p></li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-xl text-primary">Areas of focus</h3>
-                    <ul className="mt-4 space-y-2">
-                      {about.focus.map((f) => <li key={f} className="text-muted-foreground">— {f}</li>)}
-                    </ul>
-                  </div>
+                <div className="mt-10">
+                  <h3 className="font-serif text-xl text-primary">Education</h3>
+                  <ul className="mt-4 space-y-4">
+                    {about.education.map((e) => (
+                      <li key={e.school}><p className="font-medium">{e.school}</p><p className="text-muted-foreground">{e.credential}</p></li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-              <p className="text-lg leading-relaxed"><T>{about.story}</T></p>
+              <div>
+                <p className="text-lg leading-relaxed"><T>{about.story}</T></p>
+                <div className="mt-10">
+                  <h3 className="font-serif text-xl text-primary">Areas of focus</h3>
+                  <ul className="mt-4 space-y-2">
+                    {about.focus.map((f) => <li key={f} className="text-muted-foreground">— {f}</li>)}
+                  </ul>
+                </div>
+              </div>
             </div>
           </Section>
         </div>
