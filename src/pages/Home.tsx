@@ -142,7 +142,7 @@ const Home = () => {
                 <button onClick={() => setOpen(cs)}
                   className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-card text-left transition-shadow hover:shadow-lg focus-ring">
                   {cs.image && (
-                    <img src={cs.image} alt={cs.imageAlt} loading="lazy" className="aspect-[16/9] w-full object-cover" />
+                    <img src={cs.image} alt={cs.imageAlt} loading="lazy" width={1536} height={864} className="aspect-[16/9] w-full object-cover" />
                   )}
                   <div className="flex flex-1 flex-col p-6">
                     <p className="text-sm text-secondary-accent"><T>{cs.tag}</T></p>
@@ -235,7 +235,7 @@ const Home = () => {
                 <DialogTitle className="font-serif text-3xl font-normal text-primary">{open.title}</DialogTitle>
                 <DialogDescription className="text-base">{open.summary}</DialogDescription>
               </DialogHeader>
-              {open.image && <img src={open.image} alt={open.imageAlt} className="mt-2 aspect-[16/9] w-full rounded-xl object-cover" />}
+              {open.image && <img src={open.image} alt={open.imageAlt} loading="lazy" width={1536} height={864} className="mt-2 aspect-[16/9] w-full rounded-xl object-cover" />}
               <div className="space-y-7 text-base leading-relaxed">
                 <div><h3 className="story-h">Context</h3><p><T>{open.context}</T></p></div>
                 <div><h3 className="story-h">My Role</h3><p><T>{open.role}</T></p></div>
