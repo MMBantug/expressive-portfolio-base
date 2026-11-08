@@ -1,6 +1,6 @@
 // All editable site content lives here. Text in [square brackets] shows as a visible placeholder.
 
-import torontoExchangeImage from "@/assets/toronto-learning-exchange.jpg.asset.json";
+import torontoExchangeImage from "@/assets/toronto-learning-exchange.jpg";
 import kiliHubImage from "@/assets/kilimanjaro-kili-hub.jpg";
 
 export const profile = {
@@ -114,8 +114,8 @@ export const caseStudies: CaseStudy[] = [
     summary: "A two-week exchange so partners could see college operations first-hand and take ideas home.",
     keyNumber: "7",
     keyLabel: "service areas",
-    image: torontoExchangeImage.url,
-    imageAlt: "Toronto skyline at sunset with the CN Tower", 
+    image: torontoExchangeImage,
+    imageAlt: "Toronto skyline at sunset with the CN Tower",
     context:
       "Partnerships are strongest when learning flows both ways. After working with Tanzanian colleges remotely and in-country, we organized a two-week learning exchange in Canada so partners could see college operations first-hand and take ideas home.",
     role: "I managed the exchange end to end, coordinating the parts of our institution involved, and authored articles to document and share what we learned.",
