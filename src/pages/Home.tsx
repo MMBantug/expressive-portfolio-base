@@ -116,7 +116,6 @@ const Home = () => {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm text-muted-foreground"><T>{fundersNote}</T></p>
           </div>
         </section>
 
