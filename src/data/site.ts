@@ -1,7 +1,7 @@
 // All editable site content lives here. Text in [square brackets] shows as a visible placeholder.
 
 import torontoExchangeImage from "@/assets/toronto-learning-exchange.jpg.asset.json";
-import kiliHubImage from "@/assets/kilimanjaro-kili-hub.jpg.asset.json";
+import kiliHubImage from "@/assets/kilimanjaro-kili-hub.jpg";
 
 export const profile = {
   name: "Mary Bantug",
@@ -139,7 +139,7 @@ export const caseStudies: CaseStudy[] = [
     summary: "Day-to-day leadership of a co-working hub where NGOs and entrepreneurs worked side by side.",
     keyNumber: "10+",
     keyLabel: "NGOs",
-    image: kiliHubImage.url,
+    image: kiliHubImage,
     imageAlt: "Giraffe standing in front of Mount Kilimanjaro in Tanzania",
     context:
       "Small organizations working in the same region often face the same challenges in isolation. Kili Hub, a co-working space run by the social enterprise Anza International, gave NGOs and entrepreneurs a place to work side by side and collaborate.",
