@@ -98,9 +98,11 @@ const Home = () => {
               <button className="btn-primary" onClick={() => setContactOpen(true)}>Get in touch</button>
             </div>
           </div>
-          <div className="aspect-[4/5] w-full max-w-sm justify-self-center rounded-2xl border border-dashed border-secondary-accent/50 bg-muted flex items-center justify-center" role="img" aria-label="Professional photo placeholder">
-            <span className="placeholder-text">[Professional photo]</span>
-          </div>
+          <img
+            src={professionalPhoto}
+            alt="Portrait of Mary Bantug"
+            className="aspect-[4/5] w-full max-w-sm justify-self-center rounded-2xl object-cover"
+          />
         </section>
 
         {/* IMPACT */}
