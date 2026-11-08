@@ -31,11 +31,11 @@ export const fundersNote =
   "[Funded by Global Affairs Canada and Mastercard Foundation initiatives — confirm approval before showing]";
 
 export const countries = [
-  { name: "Kenya", code: "ke", line: "[Add one line]" },
-  { name: "Tanzania", code: "tz", line: "[Add one line]" },
-  { name: "Belize", code: "bz", line: "[Add one line]" },
-  { name: "Dominica", code: "dm", line: "[Add one line]" },
-  { name: "Canada", code: "ca", line: "[Add one line]" },
+  { name: "Kenya", code: "ke", line: "TVET leadership, institutional governance, and industry-aligned curricula for national polytechnics." },
+  { name: "Tanzania", code: "tz", line: "Women’s workforce development, technical trade pathways, and grassroots innovation hubs." },
+  { name: "Belize", code: "bz", line: "Ecotourism skills development, competency-based training, and national stakeholder design." },
+  { name: "Dominica", code: "dm", line: "Climate-resilient hospitality curricula and community-led vocational partnerships." },
+  { name: "Canada", code: "ca", line: "Program stewardship, donor alignment (RBM), and bilateral institutional learning exchanges." },
 ];
 
 export type CaseStudy = {
