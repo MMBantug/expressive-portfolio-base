@@ -27,9 +27,6 @@ export const impact = [
   { value: "150+", label: "participants reached across two continents" },
   { value: "10+", label: "NGOs supported through a shared hub in Tanzania" },
 ];
-export const fundersNote =
-  "[Funded by Global Affairs Canada and Mastercard Foundation initiatives — confirm approval before showing]";
-
 export const countries = [
   { name: "Kenya", code: "ke", line: "TVET leadership, institutional governance, and industry-aligned curricula for national polytechnics." },
   { name: "Tanzania", code: "tz", line: "Women’s workforce development, technical trade pathways, and grassroots innovation hubs." },

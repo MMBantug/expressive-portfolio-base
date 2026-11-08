@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import ContactDrawer from "@/components/ContactDrawer";
 import professionalPhoto from "@/assets/mary-bantug-natural-headshot.png";
 import {
-  profile, nav, impact, fundersNote, countries, caseStudies, principles, about,
+  profile, nav, impact, countries, caseStudies, principles, about,
   type CaseStudy,
 } from "@/data/site";
 
@@ -116,7 +116,6 @@ const Home = () => {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-sm text-muted-foreground"><T>{fundersNote}</T></p>
           </div>
         </section>
 
