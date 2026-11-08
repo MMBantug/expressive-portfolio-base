@@ -58,7 +58,7 @@ export const caseStudies: CaseStudy[] = [
   {
     id: "tanzania-teaching",
     title: "Building Teaching Capacity with Partner Colleges in Tanzania",
-    tag: "Train-the-Trainer partnership | Tanzania | [Years]",
+    tag: "Train-the-Trainer partnership | Tanzania | 2022–2026",
     summary: "Canadian and Tanzanian colleges co-designed workshops to strengthen competency-based teaching.",
     keyNumber: "4+",
     keyLabel: "engagements",
