@@ -183,12 +183,11 @@ const Home = () => {
         <div className="bg-card border-y border-border">
           <Section id="about" eyebrow="About" title="A little about me">
             <div className="grid gap-12 md:grid-cols-[1fr_1.6fr]">
-              <div className="aspect-square w-full max-w-xs rounded-2xl border border-dashed border-secondary-accent/50 bg-muted flex items-center justify-center" role="img" aria-label="Photo placeholder">
-                <span className="placeholder-text">[Photo]</span>
-              </div>
               <div>
-                <p className="text-lg leading-relaxed"><T>{about.story}</T></p>
-                <div className="mt-10 grid gap-10 sm:grid-cols-2">
+                <div className="aspect-square w-full max-w-xs rounded-2xl border border-dashed border-secondary-accent/50 bg-muted flex items-center justify-center" role="img" aria-label="Photo placeholder">
+                  <span className="placeholder-text">[Photo]</span>
+                </div>
+                <div className="mt-10 space-y-10">
                   <div>
                     <h3 className="font-serif text-xl text-primary">Education</h3>
                     <ul className="mt-4 space-y-4">
@@ -205,6 +204,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+              <p className="text-lg leading-relaxed"><T>{about.story}</T></p>
             </div>
           </Section>
         </div>
