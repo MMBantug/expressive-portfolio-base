@@ -29,7 +29,7 @@ export const impact = [
 ];
 export const countries = [
   { name: "Kenya", code: "ke", line: "TVET leadership, institutional governance, and industry-aligned curricula for national polytechnics." },
-  { name: "Tanzania", code: "tz", line: "Women’s workforce development, technical trade pathways, and grassroots innovation hubs." },
+  { name: "Tanzania", code: "tz", line: "Women’s workforce development, economic empowerment and community development." },
   { name: "Belize", code: "bz", line: "Ecotourism skills development, competency-based training, and national stakeholder design." },
   { name: "Dominica", code: "dm", line: "Climate-resilient hospitality curricula and community-led vocational partnerships." },
   { name: "Canada", code: "ca", line: "Program stewardship, donor alignment (RBM), and bilateral institutional learning exchanges." },
