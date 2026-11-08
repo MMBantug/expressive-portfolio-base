@@ -3,6 +3,7 @@ import { Ear, Users, BarChart3, Heart, Menu, X, Linkedin, MessageSquare, ArrowUp
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import ContactDrawer from "@/components/ContactDrawer";
 import professionalPhoto from "@/assets/mary-bantug-natural-headshot.png";
+import aboutPhoto from "@/assets/mary-kilimanjaro-uhuru-peak.jpg";
 import {
   profile, nav, impact, countries, caseStudies, principles, about,
   type CaseStudy,
@@ -183,9 +184,11 @@ const Home = () => {
           <Section id="about" eyebrow="About" title="A little about me">
             <div className="grid gap-12 md:grid-cols-[1fr_1.6fr]">
               <div>
-                <div className="aspect-square w-full max-w-xs rounded-2xl border border-dashed border-secondary-accent/50 bg-muted flex items-center justify-center" role="img" aria-label="Photo placeholder">
-                  <span className="placeholder-text">[Photo]</span>
-                </div>
+                <img
+                  src={aboutPhoto}
+                  alt="Mary Bantug holding a Canadian flag at Uhuru Peak on Mount Kilimanjaro"
+                  className="aspect-square w-full max-w-xs rounded-2xl object-cover"
+                />
                 <div className="mt-10">
                   <h3 className="font-serif text-xl text-primary">Education</h3>
                   <ul className="mt-4 space-y-4">
