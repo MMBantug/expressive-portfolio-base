@@ -120,7 +120,7 @@ const Home = () => {
         </section>
 
         {/* WHERE I WORK */}
-        <Section id="where" eyebrow="Where I work" title="Two continents, five countries">
+        <Section id="where" eyebrow="Select regions I've worked in" title="Two continents, five countries">
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {countries.map((c) => (
               <li key={c.name} className="rounded-xl border border-border bg-card p-5">
