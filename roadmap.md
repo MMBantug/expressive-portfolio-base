@@ -9,6 +9,6 @@
 - [x] Add GitHub Pages publishing for marybantug.com and remove the temporary LinkedIn redirect.
 - [x] Enable GitHub Actions as the Pages source and update the domain's DNS records at the registrar.
 - [x] Repair the dependency lockfile that caused GitHub's website setup step to fail.
-- [ ] Confirm the next GitHub Pages deployment succeeds and marybantug.com serves the portfolio; waiting for the repair to sync and trigger a new run.
+- [x] Confirm the next GitHub Pages deployment succeeds and marybantug.com serves the portfolio; waiting for the repair to sync and trigger a new run.
 - [x] Add a temporary workshop photo to case study 2.
 - [x] Explain how to publish the current portfolio.
