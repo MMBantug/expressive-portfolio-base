@@ -3,7 +3,7 @@ import { Ear, Users, BarChart3, Heart, Menu, X, Linkedin, MessageSquare, ArrowUp
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import ContactDrawer from "@/components/ContactDrawer";
 import professionalPhoto from "@/assets/mary-bantug-natural-headshot.png";
-import aboutPhoto from "@/assets/mary-kilimanjaro-uhuru-peak.png.asset.json";
+import aboutPhoto from "@/assets/mary-kilimanjaro-uhuru-peak.jpg";
 import {
   profile, nav, impact, countries, caseStudies, principles, about,
   type CaseStudy,
@@ -185,9 +185,9 @@ const Home = () => {
             <div className="grid gap-12 md:grid-cols-[1fr_1.6fr]">
               <div>
                 <img
-                  src={aboutPhoto.url}
+                  src={aboutPhoto}
                   alt="Mary Bantug holding a Canadian flag at Uhuru Peak on Mount Kilimanjaro"
-                  className="aspect-square w-full max-w-xs rounded-2xl object-cover object-top"
+                  className="aspect-square w-full max-w-xs rounded-2xl object-cover"
                 />
                 <div className="mt-10">
                   <h3 className="font-serif text-xl text-primary">Education</h3>
