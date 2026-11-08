@@ -141,10 +141,8 @@ const Home = () => {
               <li key={cs.id}>
                 <button onClick={() => setOpen(cs)}
                   className="group flex h-full w-full flex-col overflow-hidden rounded-2xl border border-border bg-card text-left transition-shadow hover:shadow-lg focus-ring">
-                  {cs.image ? (
+                  {cs.image && (
                     <img src={cs.image} alt={cs.imageAlt} loading="lazy" className="aspect-[16/9] w-full object-cover" />
-                  ) : (
-                    <div className="aspect-[16/9] w-full bg-muted flex items-center justify-center"><span className="placeholder-text">[Photo]</span></div>
                   )}
                   <div className="flex flex-1 flex-col p-6">
                     <p className="text-sm text-secondary-accent"><T>{cs.tag}</T></p>
@@ -243,7 +241,6 @@ const Home = () => {
                 <div><h3 className="story-h">My Role</h3><p><T>{open.role}</T></p></div>
                 <div><h3 className="story-h">Approach</h3><ul className="list-disc space-y-2 pl-5">{open.approach.map((a, i) => <li key={i}><T>{a}</T></li>)}</ul></div>
                 <div><h3 className="story-h">Outcomes</h3><ul className="list-disc space-y-2 pl-5">{open.outcomes.map((a, i) => <li key={i}><T>{a}</T></li>)}</ul></div>
-                <div><h3 className="story-h">What I Learned</h3><p><T>{open.learned}</T></p></div>
               </div>
             </>
           )}

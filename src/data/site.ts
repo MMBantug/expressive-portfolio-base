@@ -1,4 +1,4 @@
-// All editable site content lives here. Text in [square brackets] shows as a visible placeholder.
+// All editable site content lives here.
 
 import torontoExchangeImage from "@/assets/toronto-learning-exchange.jpg";
 import kiliHubImage from "@/assets/kilimanjaro-kili-hub.jpg";
@@ -48,7 +48,6 @@ export type CaseStudy = {
   role: string;
   approach: string[];
   outcomes: string[];
-  learned: string;
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -68,15 +67,13 @@ export const caseStudies: CaseStudy[] = [
       "Co-design, not delivery: Canadian faculty and partner-college instructors built technical workshops together.",
       "Starting with listening: consultations and needs assessments with institutions and local industry partners shaped the topics and format.",
       "Building to last: a Train-the-Trainer model so participants become trainers themselves, over 4+ engagements.",
-      "Inclusion built in: gender equality and social inclusion were part of the design from the start. [Add one concrete example]",
+      "Inclusion built in: gender equality and social inclusion were part of the design from the start.",
       "Tracking what matters: Results-Based Management to monitor progress, manage risk, and report to funders.",
     ],
     outcomes: [
       "4+ Train-the-Trainer engagements",
       "Strengthened instructional capacity and advanced CBET programs at 2+ partner institutions",
-      "[Add a rounded, approved result]",
     ],
-    learned: "[Write in my own voice]",
   },
   {
     id: "partner-led-design",
@@ -91,18 +88,16 @@ export const caseStudies: CaseStudy[] = [
     role:
       "As Program Manager, I led stakeholder consultations and needs assessments with academic institutions, NGOs, and local industry partners, then translated what we heard into locally driven program designs with gender equality and social inclusion built in.",
     approach: [
-      "Listening before designing: each program began with consultations and needs assessments rather than a pre-set plan. [Add one example of a method or question]",
-      "Bringing different voices to the table: institutions, NGOs, and industry partners often see the same challenge differently. [Add an example of differing views and how I handled it]",
-      "Turning input into design: partner input became concrete program choices. [Add one design decision that changed because of partner input]",
-      "Inclusion by design: gender equality and social inclusion built in from the start. [Add one concrete example]",
+      "Listening before designing: each program began with consultations and needs assessments rather than a pre-set plan.",
+      "Bringing different voices to the table: institutions, NGOs, and industry partners often see the same challenge differently.",
+      "Turning input into design: partner input became concrete program choices.",
+      "Inclusion by design: gender equality and social inclusion built in from the start.",
       "Checking that it worked: Results-Based Management to track progress against agreed goals and adjust when needed.",
     ],
     outcomes: [
       "Consultations and needs assessments with academic institutions, NGOs, and local industry partners across 4 countries",
       "Locally driven designs with gender equality and social inclusion built in",
-      "[Add a rounded, approved result]",
     ],
-    learned: "[Write in my own voice]",
   },
   {
     id: "tanzania-exchange",
@@ -117,17 +112,15 @@ export const caseStudies: CaseStudy[] = [
       "Partnerships are strongest when learning flows both ways. After working with Tanzanian colleges remotely and in-country, we organized a two-week learning exchange in Canada so partners could see college operations first-hand and take ideas home.",
     role: "I managed the exchange end to end, coordinating the parts of our institution involved, and authored articles to document and share what we learned.",
     approach: [
-      "One visit, many departments: the exchange drew on 7 internal service areas so partners saw the college as a whole system. [Name areas if approved]",
-      "Designing for exchange, not a tour: [Describe how I built in two-way conversation]",
+      "One visit, many departments: the exchange drew on 7 internal service areas so partners saw the college as a whole system.",
+      "Designing for exchange, not a tour.",
       "Capturing the learning: knowledge-sharing articles reached people who weren't in the room.",
     ],
     outcomes: [
       "A two-week exchange for Tanzanian education partners",
       "Collaboration across 7 internal service areas",
-      "Knowledge-sharing articles [link]",
-      "[Add a follow-on result]",
+      "Knowledge-sharing articles",
     ],
-    learned: "[Write in my own voice]",
   },
   {
     id: "kili-hub",
@@ -144,15 +137,13 @@ export const caseStudies: CaseStudy[] = [
     approach: [
       "Reliable operations for a multi-tenant space serving 10+ local and international NGOs.",
       "Programming that built connections: workshops, technical working groups, and networking events.",
-      "Leading a small team: [Add a short example]",
+      "Leading a small team.",
     ],
     outcomes: [
       "Served 10+ local and international NGOs",
       "Delivered workshops, working groups, and networking events",
       "Strengthened operational capacity and collaboration between organizations",
-      "[Add a rounded result]",
     ],
-    learned: "[Write in my own voice]",
   },
 ];
 
