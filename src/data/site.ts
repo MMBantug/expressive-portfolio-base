@@ -84,6 +84,8 @@ export const caseStudies: CaseStudy[] = [
       "Consultations and needs assessments with institutions, NGOs, and local industry shaped locally driven program designs across four countries.",
     keyNumber: "4",
     keyLabel: "countries",
+    image: partnerLedDesignImage,
+    imageAlt: "Illustrative workshop scene with partners arranging ideas around a table",
     context:
       "Programs designed far from the people they serve often miss the mark. They can overlook local priorities, duplicate what already exists, or leave out the people who most need to be included. Across donor-funded education programs in East Africa and the Caribbean, we set out to start somewhere different: by asking institutions, NGOs, and local industry what they actually needed, and letting their answers shape the program.",
     role:
