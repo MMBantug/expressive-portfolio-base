@@ -4,5 +4,5 @@
 - [x] Keep the top name/category bar fixed while scrolling.
 - [x] Add the KEFEP06 Kenya case study and point the Nairobi pin's Leadership & Management engagement to it.
 - [x] Redo the site as a clean single-page portfolio from Mary's prompt.
-- [ ] Add the uploaded Toronto and Kilimanjaro photos to case studies 3 and 4.
-- [ ] Enhance Mount Kilimanjaro's visibility in the Kili Hub photo.
+- [x] Add the uploaded Toronto and Kilimanjaro photos to case studies 3 and 4.
+- [x] Enhance Mount Kilimanjaro's visibility in the Kili Hub photo.
