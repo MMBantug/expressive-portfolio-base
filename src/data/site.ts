@@ -168,7 +168,7 @@ export const principles = [
 
 export const about = {
   story:
-    "[Write a warm, personal story: peacebuilding background, early work in Tanzania, a decade of program management.]",
+    "My path into international development began with a simple desire to make a real impact. That led me to study International Development, and then to northern Tanzania, where I managed a co-working hub for local and international NGOs. Working alongside people building change from the ground up shaped how I approach everything since. For more than a decade, I’ve managed donor-funded education programs with partners around the world, always starting by listening and designing with partners rather than for them. Outside of work, I love to travel, which keeps me curious and constantly learning from other cultures. I’d love to hear about the work you’re doing.",
   education: [
     { school: "Royal Roads University", credential: "Master of Arts, Human Security and Peacebuilding" },
     { school: "Humber Polytechnic", credential: "Post-Graduate Certificate, International Development (with Honours)" },
