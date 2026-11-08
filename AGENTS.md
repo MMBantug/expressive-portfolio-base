@@ -1,2 +1,3 @@
 - Keep map locations and their linked engagements in `src/data/fieldMap.ts`; mark the Toronto home base separately from project locations so it is never counted as an engagement.
 - Keep the map and location details in a side-by-side layout on desktop and stacked on mobile; update details from hover, focus, or tap so project links remain accessible without an overlay.
+- Deploy the static Vite build to GitHub Pages through `.github/workflows/deploy.yml`; `public/CNAME` keeps the custom domain attached, and the workflow creates `404.html` for client-side routes.

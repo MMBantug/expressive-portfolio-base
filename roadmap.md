@@ -6,3 +6,5 @@
 - [x] Redo the site as a clean single-page portfolio from Mary's prompt.
 - [x] Add the uploaded Toronto and Kilimanjaro photos to case studies 3 and 4.
 - [x] Enhance Mount Kilimanjaro's visibility in the Kili Hub photo.
+- [x] Add GitHub Pages publishing for marybantug.com and remove the temporary LinkedIn redirect.
+- [ ] Enable GitHub Actions as the Pages source and update the domain's DNS records at the registrar.
