@@ -110,7 +110,7 @@ export const caseStudies: CaseStudy[] = [
   {
     id: "tanzania-exchange",
     title: "Hosting Tanzanian Education Partners in Canada",
-    tag: "International learning exchange | Canada and Tanzania | [Year]",
+    tag: "International learning exchange | Canada and Tanzania | 2025",
     summary: "A two-week exchange so partners could see college operations first-hand and take ideas home.",
     keyNumber: "7",
     keyLabel: "service areas",
