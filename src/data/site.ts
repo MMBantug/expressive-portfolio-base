@@ -2,6 +2,7 @@
 
 import torontoExchangeImage from "@/assets/toronto-learning-exchange.jpg";
 import kiliHubImage from "@/assets/kilimanjaro-kili-hub.jpg";
+import partnerLedDesignImage from "@/assets/partner-led-design-placeholder.jpg";
 
 export const profile = {
   name: "Mary Bantug",
