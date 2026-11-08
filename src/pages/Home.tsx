@@ -93,7 +93,7 @@ const Home = () => {
         <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-16 pt-16 md:grid-cols-[1.4fr_1fr] md:px-8 md:pt-24 fade-in">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary-accent">{profile.name} · {profile.location}</p>
-            <h1 className="mt-5 font-serif text-4xl leading-tight text-primary md:text-5xl lg:text-[3.4rem]">{profile.headline}</h1>
+            <h1 className="mt-5 font-serif text-[1.9125rem] leading-tight text-primary md:text-[2.55rem] lg:text-[2.89rem]">{profile.headline}</h1>
             <p className="mt-6 text-lg text-muted-foreground md:text-xl">{profile.subline}</p>
             <div className="mt-9 flex flex-wrap gap-4">
               <button className="btn-primary" onClick={() => setContactOpen(true)}>Get in touch</button>
