@@ -7,6 +7,8 @@
 - [x] Add the uploaded Toronto and Kilimanjaro photos to case studies 3 and 4.
 - [x] Enhance Mount Kilimanjaro's visibility in the Kili Hub photo.
 - [x] Add GitHub Pages publishing for marybantug.com and remove the temporary LinkedIn redirect.
-- [ ] Enable GitHub Actions as the Pages source and update the domain's DNS records at the registrar.
+- [x] Enable GitHub Actions as the Pages source and update the domain's DNS records at the registrar.
+- [x] Repair the dependency lockfile that caused GitHub's website setup step to fail.
+- [ ] Confirm the next GitHub Pages deployment succeeds and marybantug.com serves the portfolio; waiting for the repair to sync and trigger a new run.
 - [x] Add a temporary workshop photo to case study 2.
 - [x] Explain how to publish the current portfolio.
