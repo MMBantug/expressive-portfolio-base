@@ -84,7 +84,7 @@ export const caseStudies: CaseStudy[] = [
   {
     id: "partner-led-design",
     title: "Designing Programs with Partners, Not for Them",
-    tag: "Stakeholder consultation and program design | Kenya, Tanzania, Belize, Dominica | [Years]",
+    tag: "Stakeholder consultation and program design | Kenya, Tanzania, Belize, Dominica | Ongoing",
     summary:
       "Consultations and needs assessments with institutions, NGOs, and local industry shaped locally driven program designs across four countries.",
     keyNumber: "4",
