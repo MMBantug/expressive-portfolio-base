@@ -102,7 +102,7 @@ const Home = () => {
           <img
             src={professionalPhoto}
             alt="Portrait of Mary Bantug"
-            className="aspect-[4/5] w-full max-w-sm justify-self-center rounded-2xl object-cover"
+            className="aspect-[4/5] w-full max-w-sm justify-self-center rounded-2xl object-cover md:-translate-y-[4.625rem]"
           />
         </section>
 
