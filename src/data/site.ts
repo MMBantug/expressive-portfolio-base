@@ -6,7 +6,7 @@ import kiliHubImage from "@/assets/kilimanjaro-kili-hub.jpg";
 export const profile = {
   name: "Mary Bantug",
   headline:
-    "I build education partnerships across Africa and the Caribbean that deliver measurable, locally driven results.",
+    "I love working alongside colleges and communities across around the world to build education programs that last.",
   subline: "Program Manager | Donor-funded international development and education programs",
   location: "Toronto, ON",
   email: "mary.mikelle@gmail.com",
