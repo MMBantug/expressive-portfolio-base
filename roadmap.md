@@ -12,3 +12,5 @@
 - [x] Confirm the next GitHub Pages deployment succeeds and marybantug.com serves the portfolio; waiting for the repair to sync and trigger a new run.
 - [x] Add a temporary workshop photo to case study 2.
 - [x] Explain how to publish the current portfolio.
+- [x] Replace email drafts with FormSubmit contact delivery and test service acceptance.
+- [ ] Confirm FormSubmit activation and inbox delivery; waiting for Mary to activate the email and confirm receipt.

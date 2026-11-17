@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Mail, Instagram, Linkedin } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
+import { CONTACT_EMAIL, sendContactMessage } from "@/lib/contact";
 import {
   Sheet,
   SheetContent,
@@ -20,8 +21,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-const CONTACT_EMAIL = "mary.mikelle@gmail.com";
 
 const focusAreas = [
   "TVET & Curriculum Reform",
@@ -69,14 +68,17 @@ const ContactDrawer = ({ open, onOpenChange }: ContactDrawerProps) => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const update = (key: keyof typeof form, value: string) => {
     setForm((prev) => ({ ...prev, [key]: value }));
     setErrors((prev) => ({ ...prev, [key]: "" }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submitting) return;
+    setSubmitError("");
     const result = contactSchema.safeParse(form);
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
@@ -89,31 +91,16 @@ const ContactDrawer = ({ open, onOpenChange }: ContactDrawerProps) => {
     }
 
     setSubmitting(true);
-    const subject = `Inquiry — ${result.data.focus}`;
-    const body = [
-      `Name: ${result.data.name}`,
-      result.data.organization ? `Organization: ${result.data.organization}` : "",
-      `Email: ${result.data.email}`,
-      `Area of focus: ${result.data.focus}`,
-      "",
-      result.data.message,
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-
-    toast.success("Thank you — your message is ready to send.", {
-      description: "Mary replies within 1–2 business days.",
-    });
-
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      await sendContactMessage(result.data);
+      toast.success("Thank you — your message has been submitted.");
       setForm({ name: "", organization: "", email: "", focus: "", message: "" });
       onOpenChange(false);
-    }, 600);
+    } catch {
+      setSubmitError("Your message could not be submitted. Please try again, or contact Mary using the email below.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -219,6 +206,7 @@ const ContactDrawer = ({ open, onOpenChange }: ContactDrawerProps) => {
           <Button type="submit" className="w-full rounded-full" disabled={submitting}>
             {submitting ? "Sending…" : "Send message"}
           </Button>
+          {submitError && <p role="alert" className="text-sm text-destructive">{submitError}</p>}
         </form>
 
         <div className="mt-10 pt-6 border-t border-border space-y-4">
