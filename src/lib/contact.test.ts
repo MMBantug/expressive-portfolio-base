@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import { afterEach, test } from "node:test";
 import assert from "node:assert/strict";
 import { sendContactMessage } from "./contact";
