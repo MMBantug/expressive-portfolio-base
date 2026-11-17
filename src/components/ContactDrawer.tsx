@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Mail, Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
-import { CONTACT_EMAIL, sendContactMessage } from "@/lib/contact";
+import { sendContactMessage } from "@/lib/contact";
 import {
   Sheet,
   SheetContent,
@@ -103,7 +103,7 @@ const ContactDrawer = ({ open, onOpenChange }: ContactDrawerProps) => {
       setForm({ name: "", organization: "", email: "", focus: "", message: "" });
       onOpenChange(false);
     } catch {
-      setSubmitError("Your message could not be submitted. Please try again, or contact Mary using the email below.");
+      setSubmitError("Your message could not be submitted. Please try again, or reach out to Mary on LinkedIn below.");
     } finally {
       setSubmitting(false);
     }
@@ -221,11 +221,13 @@ const ContactDrawer = ({ open, onOpenChange }: ContactDrawerProps) => {
               Direct
             </p>
             <a
-              href={`mailto:${CONTACT_EMAIL}`}
+              href="https://www.linkedin.com/in/marybantug/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm hover:opacity-70 transition-opacity"
             >
-              <Mail size={14} />
-              {CONTACT_EMAIL}
+              <Linkedin size={14} />
+              Reach out on LinkedIn
             </a>
           </div>
           <div>
