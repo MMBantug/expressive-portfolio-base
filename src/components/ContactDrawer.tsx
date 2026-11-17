@@ -92,7 +92,13 @@ const ContactDrawer = ({ open, onOpenChange }: ContactDrawerProps) => {
 
     setSubmitting(true);
     try {
-      await sendContactMessage(result.data);
+      await sendContactMessage({
+        name: result.data.name ?? "",
+        organization: result.data.organization ?? "",
+        email: result.data.email ?? "",
+        focus: result.data.focus ?? "",
+        message: result.data.message ?? "",
+      });
       toast.success("Thank you — your message has been submitted.");
       setForm({ name: "", organization: "", email: "", focus: "", message: "" });
       onOpenChange(false);
